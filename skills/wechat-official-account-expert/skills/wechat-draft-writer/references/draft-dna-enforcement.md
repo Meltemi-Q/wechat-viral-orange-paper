@@ -11,14 +11,14 @@ Use this file as hard constraints during draft generation.
 
 ## Default Style DNA File
 - Preferred path:
-  Generate a personal Style DNA via `wechat-style-profiler` before drafting.
+ Generate a personal Style DNA via `wechat-style-profiler` before drafting.
 - Recommended handoff:
-  Copy your generated DNA file into `wechat-draft-writer/references/author-style-dna.md`.
+ Copy your generated DNA file into `wechat-draft-writer/references/author-style-dna.md`.
 - If user does not provide a Style DNA file explicitly, load this default:
-  `references/author-style-dna.md`
+ `references/author-style-dna.md`
 - If user provides a personal DNA file, user file overrides default.
 - If `references/author-style-dna.md` does not exist, fallback to:
-  `references/style-dna-default-template.md`
+ `references/style-dna-default-template.md`
 - The fallback template is for temporary demo/testing only, and should not be used as final publishing baseline.
 
 ## Hard Rules

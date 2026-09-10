@@ -31,7 +31,7 @@ Use these dimensions when profiling writing style:
 - Counterargument handling style.
 
 7. Reader interaction style
-- Direct address frequency (`你`, `我们`).
+- Direct address frequency (``, ``).
 - Command vs invitation language ratio.
 - Use of checklists and templates.
 

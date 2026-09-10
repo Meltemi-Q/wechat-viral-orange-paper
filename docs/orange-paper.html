@@ -2,722 +2,721 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>公众号爆文 AI 工业化生产橙皮书</title>
+<title> AI </title>
 <style>
-  /* 基础与排版体系（字体放大、加大行距，舒适阅读） */
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    color: #222222;
-    background-color: #f7f9fa;
-    line-height: 1.78;
-    font-size: 16.5px;
-    margin: 0;
-    padding: 0;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  .page {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 20px auto;
-    background: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    position: relative;
-    box-sizing: border-box;
-    page-break-after: always;
-  }
-  @media print {
-    body { background: transparent; }
-    .page {
-      margin: 0;
-      width: 210mm;
-      height: 297mm;
-      box-shadow: none;
-      page-break-after: always;
-    }
-  }
+ /* */
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+ color: #222222;
+ background-color: #f7f9fa;
+ line-height: 1.78;
+ font-size: 16.5px;
+ margin: 0;
+ padding: 0;
+ -webkit-print-color-adjust: exact;
+ print-color-adjust: exact;
+ }
+ .page {
+ width: 210mm;
+ min-height: 297mm;
+ margin: 20px auto;
+ background: #ffffff;
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+ position: relative;
+ box-sizing: border-box;
+ page-break-after: always;
+ }
+ @media print {
+ body { background: transparent; }
+ .page {
+ margin: 0;
+ width: 210mm;
+ height: 297mm;
+ box-shadow: none;
+ page-break-after: always;
+ }
+ }
 
-  /* 亮橙封面页专属样式 - 彻底告别暗红，拥抱纯正亮橙大字 */
-  .cover-page {
-    background: #FF5500;
-    background: linear-gradient(145deg, #FF6600 0%, #FF5000 45%, #FF3D00 100%) !important;
-    color: #ffffff !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 24mm 20mm;
-    height: 297mm;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-  }
-  .cover-page .bg-grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.28) 0%, transparent 40%),
-      radial-gradient(circle at 15% 85%, rgba(255, 200, 0, 0.3) 0%, transparent 50%),
-      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .cover-page * { position: relative; z-index: 10; }
-  .cover-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 14px;
-  }
-  .cover-badge {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-  .cover-ver {
-    font-family: monospace;
-    font-size: 13px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.95);
-  }
-  .cover-title-box {
-    margin-top: 15px;
-  }
-  .cover-cat {
-    font-size: 14px;
-    font-weight: 800;
-    color: #FFEB3B;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-  }
-  .cover-main-title {
-    font-size: 52px;
-    font-weight: 900;
-    line-height: 1.15;
-    color: #ffffff;
-    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    margin-bottom: 16px;
-  }
-  .cover-main-title span {
-    color: #FFEB3B;
-  }
-  .cover-sub {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.45;
-    background: rgba(0, 0, 0, 0.22);
-    padding: 12px 18px;
-    border-radius: 10px;
-    border-left: 6px solid #FFEB3B;
-  }
-  .cover-cards {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 16px;
-    margin: 16px 0;
-  }
-  .cover-card-box {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 14px;
-    padding: 16px 20px;
-  }
-  .cover-card-title {
-    font-size: 14px;
-    font-weight: 800;
-    color: #FFEB3B;
-    margin-bottom: 10px;
-  }
-  .cover-pipeline {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .cover-step {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 8px 12px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .cover-step-num {
-    background: #FFEB3B;
-    color: #D63B00;
-    font-weight: 900;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-  }
-  .cover-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .cover-stat-item {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 12px;
-    padding: 14px;
-    text-align: center;
-  }
-  .cover-stat-val {
-    font-size: 32px;
-    font-weight: 900;
-    color: #FFEB3B;
-    line-height: 1;
-  }
-  .cover-stat-desc {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 6px;
-    font-weight: 700;
-  }
-  .cover-bottom {
-    border-top: 2px solid rgba(255, 255, 255, 0.4);
-    padding-top: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  .cover-auth h3 { font-size: 16px; font-weight: 900; margin-bottom: 4px; }
-  .cover-auth p { font-size: 12px; color: rgba(255, 255, 255, 0.88); margin-bottom: 6px; }
-  .cover-pills { display: flex; gap: 8px; }
-  .cover-pill {
-    background: #ffffff;
-    color: #D63B00;
-    font-size: 11px;
-    font-weight: 800;
-    padding: 4px 10px;
-    border-radius: 4px;
-  }
+ /* - */
+ .cover-page {
+ background: #FF5500;
+ background: linear-gradient(145deg, #FF6600 0%, #FF5000 45%, #FF3D00 100%) !important;
+ color: #ffffff !important;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ padding: 24mm 20mm;
+ height: 297mm;
+ box-sizing: border-box;
+ position: relative;
+ overflow: hidden;
+ }
+ .cover-page .bg-grid {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-image: 
+ radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.28) 0%, transparent 40%),
+ radial-gradient(circle at 15% 85%, rgba(255, 200, 0, 0.3) 0%, transparent 50%),
+ linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+ linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+ background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+ pointer-events: none;
+ z-index: 1;
+ }
+ .cover-page * { position: relative; z-index: 10; }
+ .cover-top {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+ padding-bottom: 14px;
+ }
+ .cover-badge {
+ background: rgba(0, 0, 0, 0.25);
+ border: 1px solid rgba(255, 255, 255, 0.45);
+ padding: 8px 18px;
+ border-radius: 30px;
+ font-size: 13px;
+ font-weight: 800;
+ letter-spacing: 1.5px;
+ text-transform: uppercase;
+ }
+ .cover-ver {
+ font-family: monospace;
+ font-size: 13px;
+ font-weight: 700;
+ color: rgba(255, 255, 255, 0.95);
+ }
+ .cover-title-box {
+ margin-top: 15px;
+ }
+ .cover-cat {
+ font-size: 14px;
+ font-weight: 800;
+ color: #FFEB3B;
+ letter-spacing: 2px;
+ margin-bottom: 12px;
+ }
+ .cover-main-title {
+ font-size: 52px;
+ font-weight: 900;
+ line-height: 1.15;
+ color: #ffffff;
+ text-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+ margin-bottom: 16px;
+ }
+ .cover-main-title span {
+ color: #FFEB3B;
+ }
+ .cover-sub {
+ font-size: 18px;
+ font-weight: 700;
+ line-height: 1.45;
+ background: rgba(0, 0, 0, 0.22);
+ padding: 12px 18px;
+ border-radius: 10px;
+ border-left: 6px solid #FFEB3B;
+ }
+ .cover-cards {
+ display: grid;
+ grid-template-columns: 1.3fr 0.7fr;
+ gap: 16px;
+ margin: 16px 0;
+ }
+ .cover-card-box {
+ background: rgba(255, 255, 255, 0.15);
+ border: 1px solid rgba(255, 255, 255, 0.35);
+ border-radius: 14px;
+ padding: 16px 20px;
+ }
+ .cover-card-title {
+ font-size: 14px;
+ font-weight: 800;
+ color: #FFEB3B;
+ margin-bottom: 10px;
+ }
+ .cover-pipeline {
+ display: flex;
+ flex-direction: column;
+ gap: 8px;
+ font-size: 13px;
+ font-weight: 700;
+ }
+ .cover-step {
+ background: rgba(0, 0, 0, 0.2);
+ padding: 8px 12px;
+ border-radius: 6px;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }
+ .cover-step-num {
+ background: #FFEB3B;
+ color: #D63B00;
+ font-weight: 900;
+ padding: 2px 8px;
+ border-radius: 4px;
+ font-size: 12px;
+ }
+ .cover-stats {
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+ }
+ .cover-stat-item {
+ background: rgba(0, 0, 0, 0.25);
+ border: 1px solid rgba(255, 255, 255, 0.25);
+ border-radius: 12px;
+ padding: 14px;
+ text-align: center;
+ }
+ .cover-stat-val {
+ font-size: 32px;
+ font-weight: 900;
+ color: #FFEB3B;
+ line-height: 1;
+ }
+ .cover-stat-desc {
+ font-size: 12px;
+ color: rgba(255, 255, 255, 0.9);
+ margin-top: 6px;
+ font-weight: 700;
+ }
+ .cover-bottom {
+ border-top: 2px solid rgba(255, 255, 255, 0.4);
+ padding-top: 14px;
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-end;
+ }
+ .cover-auth h3 { font-size: 16px; font-weight: 900; margin-bottom: 4px; }
+ .cover-auth p { font-size: 12px; color: rgba(255, 255, 255, 0.88); margin-bottom: 6px; }
+ .cover-pills { display: flex; gap: 8px; }
+ .cover-pill {
+ background: #ffffff;
+ color: #D63B00;
+ font-size: 11px;
+ font-weight: 800;
+ padding: 4px 10px;
+ border-radius: 4px;
+ }
 
-  /* 内页正文排版（大字号、大气排版） */
-  .content-page {
-    padding: 24mm 22mm;
-    box-sizing: border-box;
-  }
-  h1 {
-    font-size: 28px;
-    font-weight: 800;
-    color: #111111;
-    border-left: 6px solid #FF5500;
-    padding-left: 14px;
-    margin-top: 28px;
-    margin-bottom: 18px;
-    page-break-after: avoid;
-  }
-  h2 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #D63B00;
-    border-bottom: 2px solid #FFE0B2;
-    padding-bottom: 6px;
-    margin-top: 24px;
-    margin-bottom: 14px;
-    page-break-after: avoid;
-  }
-  h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #333333;
-    margin-top: 18px;
-    margin-bottom: 10px;
-    page-break-after: avoid;
-  }
-  p {
-    margin-bottom: 14px;
-    text-align: justify;
-    font-size: 16px;
-    color: #333333;
-  }
-  ul, ol {
-    margin-bottom: 16px;
-    padding-left: 24px;
-    font-size: 16px;
-  }
-  li {
-    margin-bottom: 8px;
-  }
-  blockquote {
-    border-left: 5px solid #FF5500;
-    background: #FFF8E1;
-    margin: 18px 0;
-    padding: 14px 20px;
-    font-size: 15.5px;
-    color: #4E342E;
-    border-radius: 0 8px 8px 0;
-    page-break-inside: avoid;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 18px 0;
-    font-size: 15px;
-    page-break-inside: avoid;
-  }
-  th, td {
-    border: 1px solid #E0E0E0;
-    padding: 10px 14px;
-    text-align: left;
-  }
-  th {
-    background-color: #FFF3E0;
-    color: #E65100;
-    font-weight: 700;
-  }
-  tr:nth-child(even) {
-    background-color: #FAFAFA;
-  }
-  pre {
-    background: #1E1E1E;
-    color: #D4D4D4;
-    padding: 16px 20px;
-    border-radius: 8px;
-    font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
-    font-size: 13.5px;
-    line-height: 1.6;
-    overflow-x: auto;
-    page-break-inside: avoid;
-    margin: 16px 0;
-    border-left: 5px solid #FF5500;
-  }
-  code {
-    font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
-    background: #FFF3E0;
-    color: #E65100;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 14.5px;
-    font-weight: 600;
-  }
-  pre code {
-    background: transparent;
-    color: inherit;
-    padding: 0;
-    font-weight: normal;
-  }
+ /* */
+ .content-page {
+ padding: 24mm 22mm;
+ box-sizing: border-box;
+ }
+ h1 {
+ font-size: 28px;
+ font-weight: 800;
+ color: #111111;
+ border-left: 6px solid #FF5500;
+ padding-left: 14px;
+ margin-top: 28px;
+ margin-bottom: 18px;
+ page-break-after: avoid;
+ }
+ h2 {
+ font-size: 22px;
+ font-weight: 700;
+ color: #D63B00;
+ border-bottom: 2px solid #FFE0B2;
+ padding-bottom: 6px;
+ margin-top: 24px;
+ margin-bottom: 14px;
+ page-break-after: avoid;
+ }
+ h3 {
+ font-size: 18px;
+ font-weight: 700;
+ color: #333333;
+ margin-top: 18px;
+ margin-bottom: 10px;
+ page-break-after: avoid;
+ }
+ p {
+ margin-bottom: 14px;
+ text-align: justify;
+ font-size: 16px;
+ color: #333333;
+ }
+ ul, ol {
+ margin-bottom: 16px;
+ padding-left: 24px;
+ font-size: 16px;
+ }
+ li {
+ margin-bottom: 8px;
+ }
+ blockquote {
+ border-left: 5px solid #FF5500;
+ background: #FFF8E1;
+ margin: 18px 0;
+ padding: 14px 20px;
+ font-size: 15.5px;
+ color: #4E342E;
+ border-radius: 0 8px 8px 0;
+ page-break-inside: avoid;
+ }
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ margin: 18px 0;
+ font-size: 15px;
+ page-break-inside: avoid;
+ }
+ th, td {
+ border: 1px solid #E0E0E0;
+ padding: 10px 14px;
+ text-align: left;
+ }
+ th {
+ background-color: #FFF3E0;
+ color: #E65100;
+ font-weight: 700;
+ }
+ tr:nth-child(even) {
+ background-color: #FAFAFA;
+ }
+ pre {
+ background: #1E1E1E;
+ color: #D4D4D4;
+ padding: 16px 20px;
+ border-radius: 8px;
+ font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+ font-size: 13.5px;
+ line-height: 1.6;
+ overflow-x: auto;
+ page-break-inside: avoid;
+ margin: 16px 0;
+ border-left: 5px solid #FF5500;
+ }
+ code {
+ font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+ background: #FFF3E0;
+ color: #E65100;
+ padding: 2px 6px;
+ border-radius: 4px;
+ font-size: 14.5px;
+ font-weight: 600;
+ }
+ pre code {
+ background: transparent;
+ color: inherit;
+ padding: 0;
+ font-weight: normal;
+ }
 </style>
 </head>
 <body>
 
-<!-- 封皮页 -->
+<!-- -->
 <div class="cover-page">
-    <div class="cover-header">
-        <div class="cover-badge">ORANGE PAPER · 2026 EDITION</div>
-        <div class="cover-title">公众号爆文 AI<br>工业化生产橙皮书</div>
-        <div class="cover-subtitle">从 微信内容创作体系到 10w+ 工业级生产流水线</div>
-        
-        <div class="cover-meta-grid">
-            <div class="cover-meta-card">
-                <div class="label">Architecture / 架构体系</div>
-                <div class="value">Agent Expert Agent 矩阵</div>
-            </div>
-            <div class="cover-meta-card">
-                <div class="label">Methodology / 核心方法论</div>
-                <div class="value">骨架血肉分离 · 去AI味质检</div>
-            </div>
-            <div class="cover-meta-card">
-                <div class="label">Field Tested / 实战样本</div>
-                <div class="value">548 篇真实商业号体检数据</div>
-            </div>
-            <div class="cover-meta-card">
-                <div class="label">Release / 发行版本</div>
-                <div class="value">v1.0.0 (Official Production)</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="cover-footer">
-        <div class="cover-footer-left">
-            <div class="author">Meltemi-Q & 实战开源社区</div>
-            <div class="community">开源项目：github.com/Meltemi-Q/wechat-viral-orange-paper</div>
-        </div>
-        <div class="cover-footer-right">
-            <div>DOCUMENT CLASSIFICATION: PUBLIC</div>
-            <div>LICENSE: APACHE 2.0</div>
-        </div>
-    </div>
+ <div class="cover-header">
+ <div class="cover-badge">ORANGE PAPER · 2026 EDITION</div>
+ <div class="cover-title"> AI<br></div>
+ <div class="cover-subtitle"> 10w+ </div>
+ 
+ <div class="cover-meta-grid">
+ <div class="cover-meta-card">
+ <div class="label">Architecture / </div>
+ <div class="value">Agent Expert Agent </div>
+ </div>
+ <div class="cover-meta-card">
+ <div class="label">Methodology / </div>
+ <div class="value"> · AI</div>
+ </div>
+ <div class="cover-meta-card">
+ <div class="label">Field Tested / </div>
+ <div class="value">548 </div>
+ </div>
+ <div class="cover-meta-card">
+ <div class="label">Release / </div>
+ <div class="value">v1.0.0 (Official Production)</div>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="cover-footer">
+ <div class="cover-footer-left">
+ <div class="author">Meltemi-Q & </div>
+ <div class="community">github.com/Meltemi-Q/wechat-viral-orange-paper</div>
+ </div>
+ <div class="cover-footer-right">
+ <div>DOCUMENT CLASSIFICATION: PUBLIC</div>
+ <div>LICENSE: APACHE 2.0</div>
+ </div>
+ </div>
 </div>
 
-<!-- 正文区域 -->
+<!-- -->
 <div class="content-wrapper">
-<h1 id="ai">🍊 公众号爆文 AI 工业化生产橙皮书</h1>
-<h2 id="workbuddy-10w">—— 从 微信内容创作体系到 10w+ 工业级生产流水线</h2>
+<h1 id="ai"> AI </h1>
+<h2 id="agent-10w">—— 10w+ </h2>
 <blockquote>
-<p><strong>出品</strong>：Meltemi-Q &amp; 实战开源社区<br />
-<strong>版本</strong>：v1.0.0 完整实战版<br />
-<strong>开源地址</strong>：https://github.com/Meltemi-Q/wechat-viral-orange-paper  </p>
+<p><strong></strong>Meltemi-Q &amp; <br />
+<strong></strong>v1.0.0 <br />
+<strong></strong>https://github.com/Meltemi-Q/wechat-viral-orange-paper </p>
 </blockquote>
 <hr />
-<h2 id="_1">序言：写在前面的一句大实话</h2>
-<p>如果今天还有人在教你：
-<em>“只要给 AI 丢一句‘请以凤头猪肚豹尾写一篇 10w+ 公众号文章’，你就能躺赚流量主”</em>……
-那我可以负责任地告诉你：<strong>他不是蠢，就是想卖你课程。</strong></p>
-<p>2024 年底到 2026 年，微信公众号后台的规则变天了。很多人都有过这种切肤之痛：
-去年同一个号，随便复制个爆款标题让 AI 仿写一篇，轻轻松松破万阅读，流量主日入几百；
-到了今年，同样的套路，发出去篇篇卡在 20~80 阅读。更有甚者，后台直接弹出冷冰冰的黄条警告：<strong>“低质量模仿”</strong>，直接取消原创标，流量彻底归零。</p>
-<p>为什么？因为算法进化了。
-平台根本不反对你用 AI 提升效率，平台真正绞杀的，是<strong>“通篇假大空、毫无真人经历、套路化拼凑的批量数字垃圾”</strong>。</p>
-<p>这本《橙皮书》的由来，就是因为我们深入拆解了 Agent Expert 里面那套号称能写爆文的<strong>“公众号内容创作专家”</strong>（底层代号 <code>wechat-official-account-expert</code> 与 <code>viral-topic-master</code>）。
-翻开底层代码我们才发现：<strong>它根本就不是一个简单的提示词，而是一整套极其严密的工程流水线。</strong></p>
-<p>它能写出爆文，不是因为大模型有多神，而是因为它干了三件极其反常识的事：
-1. <strong>标题死死卡住规则</strong>：绝对不准用冒号和破折号，核心标签必须在前 15 个字内，8 选 1 严格打分。
-2. <strong>AI 只搭骨架，真人必须填血肉</strong>：关键段落用方括号挖空，强制作者填入自己真实的经历细节，禁止 AI 编造人名和数字。
-3. <strong>近乎变态的去 AI 味质检</strong>：内置 38 类套路词黑名单，凡是带“深入探讨、不仅而且、愿你余生”的句子，全给乱棍打死。</p>
-<p>这本橙皮书，就是把这套官方专家的全套底牌、代码、Prompt、打分表毫无保留地翻给你看。
-不讲虚的，全是拿 500 多篇真实文章、几百万阅读和真金白银流量主收益砸出来的经验。</p>
+<h2 id="_1"></h2>
+<p>
+<em>“ AI ‘ 10w+ ’”</em>……
+<strong></strong></p>
+<p>2024 2026 
+ AI 
+ 20~80 <strong>“”</strong></p>
+<p>
+ AI <strong>“”</strong></p>
+<p> Agent Expert <strong>“”</strong> <code>wechat-official-account-expert</code> <code>viral-topic-master</code>
+<strong></strong></p>
+<p>
+1. <strong></strong> 15 8 1 
+2. <strong>AI </strong> AI 
+3. <strong> AI </strong> 38 “”</p>
+<p>Prompt
+ 500 </p>
 <hr />
-<h2 id="_2">目录索引</h2>
+<h2 id="_2"></h2>
 <ul>
-<li><a href="#第一章死亡螺旋与生存真相--为什么-ai-直出必死">第一章：死亡螺旋与生存真相 —— 为什么 AI 直出必死？</a></li>
-<li><a href="#第二章选题炼金术--10w-选题的-4-个底层基因与-12-条红线">第二章：选题炼金术 —— 10w+ 选题的 4 个底层基因与 12 条红线</a></li>
-<li><a href="#第三章标题工程学--毁掉一篇文章只要一个破折号">第三章：标题工程学 —— 毁掉一篇文章只要一个破折号</a></li>
-<li><a href="#第四章文风-dna-提取--怎么让机器吐出活人的呼吸声">第四章：文风 DNA 提取 —— 怎么让机器吐出活人的呼吸声？</a></li>
-<li><a href="#第五章去-ai-味实战硬检--38-类套路词与假大空的清洗手术">第五章：去 AI 味实战硬检 —— 38 类套路词与假大空的清洗手术</a></li>
-<li><a href="#第六章工具链与日更流水线--搜狗爬虫dna分析器与草稿箱闭环">第六章：工具链与日更流水线 —— 搜狗爬虫、DNA分析器与草稿箱闭环</a></li>
-<li><a href="#结语自媒体下半场拼的是谁更像一个活人">结语：自媒体下半场，拼的是谁更像一个活人</a></li>
+<li><a href="#---ai-"> —— AI </a></li>
+<li><a href="#--10w--4--12-"> —— 10w+ 4 12 </a></li>
+<li><a href="#--"> —— </a></li>
+<li><a href="#-dna---"> DNA —— </a></li>
+<li><a href="#-ai---38-"> AI —— 38 </a></li>
+<li><a href="#--dna"> —— DNA</a></li>
+<li><a href="#"></a></li>
 </ul>
 <hr />
-<h2 id="ai_1">第一章：死亡螺旋与生存真相 —— 为什么 AI 直出必死？</h2>
-<h3 id="1">1. 真实账号的血泪复盘</h3>
-<p>我们来看一组真凭实据的数据：
-一个专注于读书、成长、生活认知的成熟号（548 篇文章体检）：
-- <strong>峰值期（去年底）</strong>：连续 30 天日入三位数，单月变现 6000+。19 篇吸引力法则平均 7547 阅读（最高 3.8 万）；26 篇天道系列平均 6200 阅读（最高 6.2 万）。
-- <strong>扑街期（今年中）</strong>：断更一个月，重新捡起来后，让 AI 仿写，篇篇阅读量在 50~100 之间挣扎，甚至被提示“低质量仿写”。</p>
-<p>很多人以为是自己运势不好，其实底层逻辑极其冷酷：</p>
-<pre><code>去搜一搜找别人的爆款
-       ↓
-让 AI 照着抄一篇（通篇 AI 味：在当今快节奏社会...由此可见...）
-       ↓
-同题同结构的号全网有 300 个在发
-       ↓
-微信算法语义消重模型直接命中
-       ↓
-关进低质池，阅读封死在两位数
+<h2 id="ai_1"> —— AI </h2>
+<h3 id="1">1. </h3>
+<p>
+548 
+- <strong></strong> 30 6000+19 7547 3.8 26 6200 6.2 
+- <strong></strong> AI 50~100 “”</p>
+<p></p>
+<pre><code>
+ ↓
+ AI AI ......
+ ↓
+ 300 
+ ↓
+
+ ↓
+
 </code></pre>
-<h3 id="2">2. 平台的消重机制到底怎么抓你的？</h3>
-<p>微信公众号的公域推荐算法，现在主要盯三件事：
-1. <strong>标题查重</strong>：别人爆过的标题，如果只换一两个字（比如“人到五十要明白”改成“人到中年要清楚”），直接被降权。
-2. <strong>AI 风格指纹识别</strong>：大模型生成文本的词汇困惑度（Perplexity）极其规律，尤其是喜欢用对仗句（“不仅……更是……”、“既有……又有……”）。平台检测算法一扫，纯机器生成概率超过 85%，立刻停止推流。
-3. <strong>空洞无物判定</strong>：文章通篇都在讲宏大道理，没有时间、没有地点、没有真实对话、没有数字细节。平台判定这叫“低信息密度营销软文”。</p>
-<h3 id="3">3. “骨架与血肉分离”：唯一的活路</h3>
-<p>内容创作专家系统的底层逻辑就一句话：
-<strong>AI 负责搭骨架，真人负责填血肉。</strong></p>
+<h3 id="2">2. </h3>
+<p>
+1. <strong></strong>“”“”
+2. <strong>AI </strong>Perplexity“…………”“…………” 85%
+3. <strong></strong>“”</p>
+<h3 id="3">3. “”</h3>
+<p>
+<strong>AI </strong></p>
 <ul>
-<li><strong>AI 搭骨架</strong>：大模型擅长归纳逻辑、拆解结构、梳理心理学概念、设计起承转合。这一步让它把 800 字的框架搭好。</li>
-<li><strong>真人填血肉</strong>：在最需要真实感的关键节点，留下填空题：
-  <code>【补一件事：你当时在哪？正干什么？看到这句话时第一反应是什么？写 2 句话就行】</code></li>
-<li>只有填入真人真实经历（哪怕只有 150 字），这篇文章在算法眼里就拥有了<strong>独一无二的原创生命体征</strong>。</li>
+<li><strong>AI </strong> 800 </li>
+<li><strong></strong>
+ <code> 2 </code></li>
+<li> 150 <strong></strong></li>
 </ul>
 <hr />
-<h2 id="10w-4-12">第二章：选题炼金术 —— 10w+ 选题的 4 个底层基因与 12 条红线</h2>
-<h3 id="1-4">1. 爆款的 4 个底层基因</h3>
-<p>选题决定了一篇文章 80% 的命。如果选题烂了，正文文笔再好也没人点。
-所有能被疯狂转发的文章，背后一定踩中了以下 4 个基因里的至少 2 个：</p>
+<h2 id="10w-4-12"> —— 10w+ 4 12 </h2>
+<h3 id="1-4">1. 4 </h3>
+<p> 80% 
+ 4 2 </p>
 <ol>
-<li><strong>情绪共鸣（替读者把骂娘的话说出来）</strong>：
-   读者转发一篇文章，绝不是因为“作者写得真客观”，而是因为“这篇文章把我憋了三年的委屈/窝囊/愤怒/庆幸给狠狠骂出来了”。</li>
-<li><strong>信息差认知（反常识，把旧观念一脚踹翻）</strong>：
-   “人越节俭越穷”、“努力工作是最慢的赚钱方式”、“听话懂事的孩子长大最容易抑郁”。
-   必须打破常识，让读者产生“卧槽，原来是这样”的认知冲击。</li>
-<li><strong>身份标签（让读者对号入座）</strong>：
-   “月薪3000”、“50岁退休女人”、“体制内十年”。
-   人群越具象，该人群的抱团转发率就越高。</li>
-<li><strong>行动指令（看完就能去干一件事）</strong>：
-   “今天晚上回家立刻把微信这三个开关关掉”、“用这套存钱表坚持一个月”。</li>
+<li><strong></strong>
+ “”“///”</li>
+<li><strong></strong>
+ “”“”“”
+ “”</li>
+<li><strong></strong>
+ “3000”“50”“”
+ </li>
+<li><strong></strong>
+ “”“”</li>
 </ol>
-<h3 id="2-12">2. 12 条心法预筛清单（红黄线标准）</h3>
-<p>在 内容创作专家系统的底层文件 <code>core-principles.md</code> 里，立下了 12 条铁规：</p>
+<h3 id="2-12">2. 12 </h3>
+<p> <code>core-principles.md</code> 12 </p>
 <table>
 <thead>
 <tr>
-<th>编号</th>
-<th>心法法则</th>
-<th>极简判定</th>
-<th>处置结果</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>01</strong></td>
-<td><strong>写所有人的心事，不写自己的私事</strong></td>
-<td>读者不在乎你今天吃了什么面，除非这碗面折射出所有异乡打工人的辛酸</td>
-<td>🔴 犯规直接枪毙</td>
+<td><strong></strong></td>
+<td></td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>02</strong></td>
-<td><strong>一句话说清具体痛点</strong></td>
-<td>痛点必须具象到肉体或钱包：不是“生活压力大”，而是“下个月房贷差2000”</td>
-<td>🔴 模糊直接枪毙</td>
+<td><strong></strong></td>
+<td>“”“2000”</td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>03</strong></td>
-<td><strong>打破认知反转</strong></td>
-<td>核心观点必须有敢被别人反驳的勇气，没有争议就等于没有传播</td>
-<td>🟡 强力加分项</td>
+<td><strong></strong></td>
+<td></td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>04</strong></td>
-<td><strong>带具体数字</strong></td>
-<td>“存到10万”永远比“多存点钱”抓人；“3个坏习惯”比“一些坏习惯”强十倍</td>
-<td>🟡 强力加分项</td>
+<td><strong></strong></td>
+<td>“10”“”“3”“”</td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>05</strong></td>
-<td><strong>少用极端负面词</strong></td>
-<td>失业、绝望、全完了——这种词读者抵触，平台更会直接删制造焦虑的文</td>
-<td>🔴 严禁踩雷</td>
+<td><strong></strong></td>
+<td>——</td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>06</strong></td>
-<td><strong>拒绝假大空黑话</strong></td>
-<td>赋能、闭环、认知升维、底层逻辑——看见直接吐，大白话才是真本事</td>
-<td>🔴 发现直接删</td>
+<td><strong></strong></td>
+<td>——</td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>07</strong></td>
-<td><strong>社交货币价值</strong></td>
-<td>读者转到朋友圈，能显得他“清醒、通透、孝顺、懂财商”吗？</td>
-<td>🟡 核心传播源</td>
+<td><strong></strong></td>
+<td>“”</td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>08</strong></td>
-<td><strong>严禁编造人生细节</strong></td>
-<td>数字、人名、事件必须来自真人真事库，编造一次就在评论区被扒皮</td>
-<td>🔴 违规降权封号</td>
+<td><strong></strong></td>
+<td></td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>09</strong></td>
-<td><strong>系列可复制性</strong></td>
-<td>这一篇爆了，能不能换个书名/场景再写 3 篇？孤本题材不碰</td>
-<td>🟡 商业杠杆</td>
+<td><strong></strong></td>
+<td>/ 3 </td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>10</strong></td>
-<td><strong>合规红线避让</strong></td>
-<td>医疗治病承诺、玄学算命收费、政策歪曲解读，坚决零容忍</td>
-<td>🔴 一票否决</td>
+<td><strong></strong></td>
+<td></td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>11</strong></td>
-<td><strong>前 3 行必须给承诺</strong></td>
-<td>“看完这篇你会明白……”开头不能只叫苦，必须给解药</td>
-<td>🟡 完读率保证</td>
+<td><strong> 3 </strong></td>
+<td>“……”</td>
+<td> </td>
 </tr>
 <tr>
 <td><strong>12</strong></td>
-<td><strong>每段文字内部错开</strong></td>
-<td>不能每一小节都“语录→故事→金句”机械重复，过于对称本身就是 AI 特征</td>
-<td>🟡 去套路化</td>
+<td><strong></strong></td>
+<td>“→→” AI </td>
+<td> </td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="_3">第三章：标题工程学 —— 毁掉一篇文章只要一个破折号</h2>
-<h3 id="1_1">1. 为什么你的标题在信息流里没人点？</h3>
-<p>在手机端微信列表里，读者滑屏的速度大概是 <strong>每秒 3~5 篇</strong>。留给你的时间只有 0.3 秒。
-很多人喜欢学传统文人起标题，或者让 AI 生成标题：
-- ❌ 失败范例：<code>《关于当代中年人如何克服生活困境的几点思考》</code>（读者内心：关我屁事，下一个）
-- ❌ 失败范例：<code>《天道》：真正的强者，往往具备这三种特质——尤其是最后一种！</code>（浓郁的营销号机器味，读者已经脱敏并产生生理厌恶）</p>
-<h3 id="2_1">2. 专家的四大硬性标题规则</h3>
-<p>官方专家 <code>wechat-title-generator</code> 在底层代码里写死了这几条断头规则：
-1. <strong>绝对禁止冒号、破折号、双引号</strong>：
-   <code>《天道》：人到五十……——别不信！</code> ❌ 这种格式已经被平台算法打入“典型机器批量模版”黑名单。
-   必须改写为自然的呼吸句：
-   <code>《天道》丁元英早就说透了，人到五十千万别碰这三件事，尤其是第二件</code> ✅
-2. <strong>分句必须用中文逗号隔开</strong>：单行滑读，逗号是唯一的呼吸节奏。
-3. <strong>核心标签前 15 个字内前置</strong>：
-   书名（《吸引力法则》）、人名（丁元英）、身份（退休大姐、月薪4000）必须在前 15 个字出现，方便推荐引擎打标签分发。
-4. <strong>绝对不用“如何 / 怎样”做开头</strong>：数据证明，疑问句开头平均阅读量不足 30。</p>
-<h3 id="3-5">3. 经过实战验证的 5 大主力公式</h3>
+<h2 id="_3"> —— </h2>
+<h3 id="1_1">1. </h3>
+<p> <strong> 3~5 </strong> 0.3 
+ AI 
+- [] <code></code>
+- [] <code>——</code></p>
+<h3 id="2_1">2. </h3>
+<p> <code>wechat-title-generator</code> 
+1. <strong></strong>
+ <code>……——</code> [] “”
+ 
+ <code></code> []
+2. <strong></strong>
+3. <strong> 15 </strong>
+ 4000 15 
+4. <strong>“ / ”</strong> 30</p>
+<h3 id="3-5">3. 5 </h3>
 <table>
 <thead>
 <tr>
-<th>公式类型</th>
-<th>结构套路</th>
-<th>实战爆款原案</th>
-<th>流量战绩</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>丁元英语录体</strong></td>
-<td><code>人名/IP + 观点长句 + 藏反转</code></td>
-<td>丁元英：人如果过度的节俭，舍不得吃，舍不得穿，那你省下来的其实不是钱……</td>
-<td><strong>6.2 万阅读</strong></td>
+<td><strong></strong></td>
+<td><code>/IP + + </code></td>
+<td>……</td>
+<td><strong>6.2 </strong></td>
 </tr>
 <tr>
-<td><strong>好运心理暗示</strong></td>
-<td><code>书名 + 直接对读者说话 + 转运承诺</code></td>
-<td>《吸引力法则》：恭喜你要转运了，否则你是看不到这篇文章的</td>
-<td><strong>3.8 万阅读 (2041赞)</strong></td>
+<td><strong></strong></td>
+<td><code> + + </code></td>
+<td></td>
+<td><strong>3.8 (2041)</strong></td>
 </tr>
 <tr>
-<td><strong>低起点极限存钱</strong></td>
-<td><code>低收入身份 + 具象数字 + 笨办法</code></td>
-<td>月薪4000，我用这个笨办法两年存了8万</td>
-<td><strong>破千日更大单</strong></td>
+<td><strong></strong></td>
+<td><code> + + </code></td>
+<td>40008</td>
+<td><strong></strong></td>
 </tr>
 <tr>
-<td><strong>警示戳破窗户纸</strong></td>
-<td><code>越是……越容易……</code></td>
-<td>越是老实听话的孩子，长大后越容易在单位吃大亏</td>
-<td><strong>私域疯转</strong></td>
+<td><strong></strong></td>
+<td><code>…………</code></td>
+<td></td>
+<td><strong></strong></td>
 </tr>
 <tr>
-<td><strong>年龄阶段反差</strong></td>
-<td><code>到了X岁才明白 + 颠覆旧依赖</code></td>
-<td>过了 50 岁才彻底明白，真正能依靠的从来不是儿女和老伴</td>
-<td><strong>中老年爆款</strong></td>
+<td><strong></strong></td>
+<td><code>X + </code></td>
+<td> 50 </td>
+<td><strong></strong></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="dna">第四章：文风 DNA 提取 —— 怎么让机器吐出活人的呼吸声？</h2>
-<h3 id="1-ai">1. 为什么 AI 写的文章一读就知道不是人？</h3>
-<p>因为大模型在没有受限的情况下，写出来的东西有极其恶心的“<strong>三无特征</strong>”：
-- <strong>无立场</strong>：各打五十大板，充满“一方面……另一方面……”。
-- <strong>无呼吸</strong>：句式极其匀速，三句话一段，段段长度一样长，对称得像墓碑。
-- <strong>无瑕疵</strong>：词汇完美无缺，没有任何口语的磕巴、半成品想法和个人偏见。</p>
-<h3 id="2-14">2. 14 维文风画像建模法</h3>
-<p>官方专家通过 <code>build_style_profile.py</code> 脚本，将一个活人的写作习惯量化为 14 个参数：</p>
-<pre><code>文风 DNA 四层架构
-├── 1. 表层特征：平均单句长（字数）、逗号与句号比率、第二人称“你”使用频率
-├── 2. 结构特征：小标题反差化程度、段落长度（强制 1~3 句，单句 ≤25 字）
-├── 3. 深层特征：先说结论还是先摆案例？遇到痛点是安慰还是敲打？
-└── 4. 独特标记：作者本人的口头禅、严禁出现的表达、固定收尾方式
+<h2 id="dna"> DNA —— </h2>
+<h3 id="1-ai">1. AI </h3>
+<p>“<strong></strong>”
+- <strong></strong>“…………”
+- <strong></strong>
+- <strong></strong></p>
+<h3 id="2-14">2. 14 </h3>
+<p> <code>build_style_profile.py</code> 14 </p>
+<pre><code> DNA 
+ 1. “”
+ 2. 1~3 ≤25 
+ 3. 
+ 4. 
 </code></pre>
-<h3 id="3-dna">3. 一份真实的文风 DNA 约束卡</h3>
-<p>当你把这段提示词拼在写作请求前，AI 的文字质感会瞬间变样：</p>
-<pre><code class="language-markdown">【作者文风强制规则】
-1. 人设：50岁左右退休大姐，心态平和，阅历丰富，像老姐妹在茶桌边跟你讲掏心窝子话。
-2. 句式约束：单句绝对不超过 25 个字。一段最多 3 句话。能用句号就别用逗号。
-3. 对话感：全文高频使用“你想想是不是这个理？”、“我跟你说句大实话”。
-4. 严禁书面黑话：禁止出现“由此可见、不可否认、毋庸置疑、赋能、重构”。
-5. 标点禁令：全篇不准出现一个破折号（—）。
+<h3 id="3-dna">3. DNA </h3>
+<p>AI </p>
+<pre><code class="language-markdown">
+1. 50
+2. 25 3 
+3. “”“”
+4. “”
+5. —
 </code></pre>
 <hr />
-<h2 id="ai-38">第五章：去 AI 味实战硬检 —— 38 类套路词与假大空的清洗手术</h2>
-<h3 id="1-38-ai">1. 38 类 AI 高频套路词清洗黑名单</h3>
-<p>凡是在你的稿子里看到下面这批词，请不要犹豫，拿起剪刀直接剁掉：</p>
-<pre><code>[宏大废话类]
-× 在当今快节奏的社会中  → 改为：具体哪一年哪一天，或者直接删掉
-× 纵观历史长河 / 时代浪潮 → 纯属凑字数废话，直接删掉
-× 卷轴 / 篇章 / 浓墨重彩的一笔 → 假大空，直接删掉
+<h2 id="ai-38"> AI —— 38 </h2>
+<h3 id="1-38-ai">1. 38 AI </h3>
+<p></p>
+<pre><code>[]
+× → 
+× / → 
+× / / → 
 
-[自作聪明连词类]
-× 值得注意的是 / 深入探讨 → 改为：最要紧的是 / 聊聊这件事
-× 总而言之 / 由此可见 → 改为：直接说结论，删掉连词
-× 换言之 / 毋庸置疑 → 直接删掉
+[]
+× / → / 
+× / → 
+× / → 
 
-[虚假对仗类]
-× 不仅是……更是…… → 拆成两句话分别说
-× 不是……而是…… → 假对称结构，大模型的最爱，强制拆开
-× 既要……又要…… → 改为具体操作步骤
+[]
+× ………… → 
+× ………… → 
+× ………… → 
 
-[烂俗鸡汤类]
-× 愿你历尽千帆 / 不负韶华 → 读者看到想吐，直接换成大白话叮嘱
-× 余生愿你安好 / 不念过往不畏将来 → 营销号烂大街模版，坚决不要
+[]
+× / → 
+× / → 
 </code></pre>
-<h3 id="2-adding-soul">2. 给文章注入“灵魂”的三招（Adding Soul）</h3>
-<p>去 AI 味的最高境界不是没有错字，而是让读者感觉到屏幕背后有一颗<strong>热气腾腾的心脏</strong>在跳动：</p>
+<h3 id="2-adding-soul">2. “”Adding Soul</h3>
+<p> AI <strong></strong></p>
 <ol>
-<li><strong>拥有极其偏激但真诚的主观态度</strong>：</li>
-<li>机器：<code>消费主义有其便利，但也会带来负债，我们应理性看待。</code>（无聊废话）</li>
-<li>真人：<code>天天喝 30 块钱奶茶的人，别怪自己年底兜里比脸还干净。</code>（啪的一耳光打在脸上）</li>
-<li><strong>打碎均速节奏，长短句结合</strong>：</li>
-<li>先来两句短的：<code>别硬撑了。真没必要。</code></li>
-<li>再来一段细细道来的碎碎念。最后再来一句单字断句：<code>累。</code></li>
-<li><strong>带入真实生活的碎屑</strong>：</li>
-<li>在正文不经意提一句：<code>（上周带我小孙子去菜市场买西红柿，挑了三个花了我八块钱，我当时心里咯噔一下……）</code></li>
-<li>一旦有了这个西红柿，全篇瞬间充满人间烟火气。</li>
+<li><strong></strong></li>
+<li><code></code></li>
+<li><code> 30 </code></li>
+<li><strong></strong></li>
+<li><code></code></li>
+<li><code></code></li>
+<li><strong></strong></li>
+<li><code>……</code></li>
+<li></li>
 </ol>
 <hr />
-<h2 id="dna_1">第六章：工具链与日更流水线 —— 搜狗爬虫、DNA分析器与草稿箱闭环</h2>
-<h3 id="1-sop">1. 完整工业化流水线 SOP</h3>
-<div class="mermaid-box"><div class="box-title">📊 架构与流程模型</div><pre>graph TD
-    Step1[1. CLI抓取全网对标爆文&lt;br&gt;node search_wechat.js] --&gt; Step2[2. 12心法预筛 + 8维打分&lt;br&gt;评分 ≥30 分立项]
-    Step2 --&gt; Step3[3. 搭建大纲骨架&lt;br&gt;预留2-3处真人真事填空框]
-    Step3 --&gt; Step4[4. 人工回填真事&lt;br&gt;写入具体时间/人名/数字]
-    Step4 --&gt; Step5[5. 文风DNA生成初稿&lt;br&gt;单句≤25字, 短句断行]
-    Step5 --&gt; Step6[6. 标题工程 8 选 1&lt;br&gt;禁冒号破折号, 标签前置]
-    Step6 --&gt; Step7[7. 跑 check_ai_taste.py&lt;br&gt;AI味得分 &gt;2.5 分驳回修改]
-    Step7 --&gt; Step8[8. 官方API推草稿箱&lt;br&gt;手机预览, 人工亲手点群发]
+<h2 id="dna_1"> —— DNA</h2>
+<h3 id="1-sop">1. SOP</h3>
+<div class="mermaid-box"><div class="box-title"> </div><pre>graph TD
+ Step1[1. CLI&lt;br&gt;node search_wechat.js] --&gt; Step2[2. 12 + 8&lt;br&gt; ≥30 ]
+ Step2 --&gt; Step3[3. &lt;br&gt;2-3]
+ Step3 --&gt; Step4[4. &lt;br&gt;//]
+ Step4 --&gt; Step5[5. DNA&lt;br&gt;≤25, ]
+ Step5 --&gt; Step6[6. 8 1&lt;br&gt;, ]
+ Step6 --&gt; Step7[7. check_ai_taste.py&lt;br&gt;AI &gt;2.5 ]
+ Step7 --&gt; Step8[8. API&lt;br&gt;, ]
 </pre></div>
-<h3 id="2_2">2. 随书工具箱使用指南</h3>
-<p>在本项目仓库的 <code>scripts/</code> 目录下，包含三大开箱即用的命令行工具：</p>
-<h4 id="1-search_wechatjs">1. 抓取全网爆文对标 (<code>search_wechat.js</code>)</h4>
+<h3 id="2_2">2. </h3>
+<p> <code>scripts/</code> </p>
+<h4 id="1-search_wechatjs">1. (<code>search_wechat.js</code>)</h4>
 <pre><code class="language-bash">cd scripts
-# 安装依赖
-npm install cheerio
+# npm install cheerio
 
-# 抓取最近关于“存钱 养老”的爆款文章
-node search_wechat.js &quot;存钱 养老&quot; -n 10 -o trending.json
+# “ ”
+node search_wechat.js &quot; &quot; -n 10 -o trending.json
 </code></pre>
-<h4 id="2-dna-build_style_profilepy">2. 量化分析文风 DNA (<code>build_style_profile.py</code>)</h4>
-<pre><code class="language-bash"># 读取你过往最好的 5 篇文章，输出统计分析
+<h4 id="2-dna-build_style_profilepy">2. DNA (<code>build_style_profile.py</code>)</h4>
+<pre><code class="language-bash"># 5 
 python build_style_profile.py --input-dir ../articles/
 </code></pre>
-<h4 id="3-ai-check_ai_tastepy">3. 发布前硬性 AI 味打分 (<code>check_ai_taste.py</code>)</h4>
-<pre><code class="language-bash"># 检查稿件，超标自动报错拦截
+<h4 id="3-ai-check_ai_tastepy">3. AI (<code>check_ai_taste.py</code>)</h4>
+<pre><code class="language-bash"># 
 python check_ai_taste.py &quot;posts/today_article.md&quot;
 </code></pre>
 <hr />
-<h2 id="_4">结语：自媒体下半场，拼的是谁更像一个活人</h2>
-<p>大模型的到来，让生产文字的边际成本彻底趋近于零。
-当所有人都在一键生成 1000 字的“完美垃圾”时，<strong>“真人的经历、笨拙的真诚、带刺的态度、热气腾腾的烟火气”</strong>反而成了互联网上最稀缺的奢侈品。</p>
-<p>AI 应该成为你的外骨骼装甲，替你搬砖、替你找资料、替你搭架子、替你纠错字。
-但那颗驱动装甲的心脏，必须是你自己的。</p>
-<p>祝你在自媒体的下半场，做稳流量主，把真话说给同频的人听。</p>
+<h2 id="_4"></h2>
+<p>
+ 1000 “”<strong>“”</strong></p>
+<p>AI 
+</p>
+<p></p>
 </div>
 
 
-  <!-- 卷七：业界流派借鉴 -->
-  <div class="page content-page">
-    <h1>卷七：开源生态对标 —— 社区主流 WeChat Skill 架构横评</h1>
-    <blockquote>
-      <strong>“不要让 AI 当创作者，让 AI 当打工人。读者关注你，是为了看一个活生生的人在真实世界里跌打滚爬，而不是看一台发热的服务器吐出毫无瑕疵的平庸废话。”</strong>
-    </blockquote>
+ <!-- -->
+ <div class="page content-page">
+ <h1> —— WeChat Skill </h1>
+ <blockquote>
+ <strong>“ AI AI ”</strong>
+ </blockquote>
 
-    <h2>7.1 公众号 AI 创作的两大流派</h2>
-    <p>在微信生态的 AI 创作者群体中，目前存在两大极具代表性的实战流派：</p>
-    <table>
-      <thead>
-        <tr><th>对比维度</th><th>【开源单任务极客流】(Huasheng/开源社区创作者模式)</th><th>【Agent Expert 工业流】(官方专家矩阵模式)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>核心哲学</strong></td><td><strong>工匠赋能 (Craftsman Solo)</strong><br>轻量、高灵活性、一人成军</td><td><strong>标准化流水线 (Assembly Line)</strong><br>分工明确、多 Agent 协同、工业质检</td></tr>
-        <tr><td><strong>打法定位</strong></td><td>个人 IP、极客博主、深度技术与硬核实操</td><td>商业矩阵号、垂直行业号、团队化日更运营</td></tr>
-        <tr><td><strong>选题策略</strong></td><td>第一视角真实经历、突发热点第一时间实测</td><td>搜狗/全网爆款对标、8 维量化打分卡（≥30分立项）</td></tr>
-        <tr><td><strong>文风控制</strong></td><td>作者个人 Few-Shot 样本克隆 + 人工真实吐槽</td><td>14 维文风 DNA 特征建模 + 口语化断句配方</td></tr>
-        <tr><td><strong>工具形态</strong></td><td>个人轻量 CLI / 单一精准 Skill / 极简脚本</td><td>多专家包编排 / 反蒸馏清洗器 / 微信草稿箱 API</td></tr>
-      </tbody>
-    </table>
+ <h2>7.1 AI </h2>
+ <p> AI </p>
+ <table>
+ <thead>
+ <tr><th></th><th>(/)</th><th>Agent Expert ()</th></tr>
+ </thead>
+ <tbody>
+ <tr><td><strong></strong></td><td><strong> (Craftsman Solo)</strong><br></td><td><strong> (Assembly Line)</strong><br> Agent </td></tr>
+ <tr><td><strong></strong></td><td> IP</td><td></td></tr>
+ <tr><td><strong></strong></td><td></td><td>/8 ≥30</td></tr>
+ <tr><td><strong></strong></td><td> Few-Shot + </td><td>14 DNA + </td></tr>
+ <tr><td><strong></strong></td><td> CLI / Skill / </td><td> / / API</td></tr>
+ </tbody>
+ </table>
 
-    <h2>7.2 开源单任务极客流的 4 大精髓 Skill 实践</h2>
-    <ol>
-      <li><strong>真实生活与实测“账本化”：</strong>拒绝概念叙事。不写“AI 颠覆行业”，而是写“我昨天用这个工具写了 3000 行代码，耗费了 0.42 美元，踩了 3 个坑，其中一个坑卡了我两个小时”。带时间戳的报错截图、后台真实折线图胜过千言万语。</li>
-      <li><strong>Few-Shot 文风强约束注入：</strong>不写“请幽默接地气”，而是直接喂给模型 3 段自己以往写过的爆款真实语录，强制模型模仿短促断句与口头禅。</li>
-      <li><strong>半自动人机协同 (Human-in-the-loop)：</strong>AI 负责收集素材与整理脉络，真人负责敲定核心态度、注入亲身八卦与踩坑细节、最后 15 分钟人工精修。</li>
-      <li><strong>极致遵循 KISS 原则的单任务 CLI：</strong>一个脚本只做好一件事，拒绝过度封装。</li>
-    </ol>
+ <h2>7.2 4 Skill </h2>
+ <ol>
+ <li><strong>“”</strong>“AI ”“ 3000 0.42 3 ”</li>
+ <li><strong>Few-Shot </strong>“” 3 </li>
+ <li><strong> (Human-in-the-loop)</strong>AI 15 </li>
+ <li><strong> KISS CLI</strong></li>
+ </ol>
 
-    <h2>7.3 两派合流：打造 10w+ 终极生产线</h2>
-    <p>真正的顶尖内容创作者，应当将 <strong>Agent Expert 的工业化严密工序</strong> 与 <strong>开源社区创作者的活人体温血肉</strong> 深度缝合：用 Agent Expert 解决选题枯竭、标题平庸与排版繁琐，用开源单任务极客流解决假大空机器味，实现效率与传播力的双重突破！</p>
-  </div>
+ <h2>7.3 10w+ </h2>
+ <p> <strong>Agent Expert </strong> <strong></strong> Agent Expert </p>
+ </div>
 
 </body>
 </html>

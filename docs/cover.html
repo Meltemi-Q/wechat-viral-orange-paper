@@ -2,302 +2,302 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>微信公众号爆文创作 Skill 橙皮书 封面</title>
+<title> Skill </title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&family=JetBrains+Mono:wght@600;800&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&family=JetBrains+Mono:wght@600;800&display=swap');
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    width: 1200px;
-    height: 1600px;
-    background: #e65500;
-    position: relative;
-    overflow: hidden;
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 80px 85px;
-  }
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ body {
+ width: 1200px;
+ height: 1600px;
+ background: #e65500;
+ position: relative;
+ overflow: hidden;
+ font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+ color: #ffffff;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ padding: 80px 85px;
+ }
 
-  /* Grok 生成的 AI 艺术大图作为背景图层，完美居中充满 */
-  .bg-ai-art {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('file:///D:/repos/wechat-viral-orange-paper/cover-3x4.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-  }
+ /* Grok AI */
+ .bg-ai-art {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-image: url('file:///D:/repos/wechat-viral-orange-paper/cover-3x4.jpg');
+ background-size: cover;
+ background-position: center;
+ z-index: 1;
+ }
 
-  /* 柔和的顶部与底部渐变暗部遮罩，确保文字极致清晰易读，保留中间发光能量体全貌 */
-  .vignette-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      180deg, 
-      rgba(215, 75, 0, 0.92) 0%, 
-      rgba(215, 75, 0, 0.75) 18%, 
-      rgba(215, 75, 0, 0) 38%, 
-      rgba(215, 75, 0, 0) 65%, 
-      rgba(215, 75, 0, 0.85) 86%, 
-      rgba(200, 65, 0, 0.98) 100%
-    );
-    z-index: 2;
-    pointer-events: none;
-  }
+ /* */
+ .vignette-overlay {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(
+ 180deg, 
+ rgba(215, 75, 0, 0.92) 0%, 
+ rgba(215, 75, 0, 0.75) 18%, 
+ rgba(215, 75, 0, 0) 38%, 
+ rgba(215, 75, 0, 0) 65%, 
+ rgba(215, 75, 0, 0.85) 86%, 
+ rgba(200, 65, 0, 0.98) 100%
+ );
+ z-index: 2;
+ pointer-events: none;
+ }
 
-  /* 顶栏 */
-  .top-bar {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.45);
-    padding-bottom: 24px;
-  }
-  .series-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 10px 24px;
-    border-radius: 40px;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    backdrop-filter: blur(10px);
-  }
-  .series-tag .dot {
-    width: 12px;
-    height: 12px;
-    background: #FFEB3B;
-    border-radius: 50%;
-    box-shadow: 0 0 12px #FFEB3B;
-  }
-  .version-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 19px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.95);
-    letter-spacing: 1px;
-    background: rgba(0, 0, 0, 0.25);
-    padding: 8px 18px;
-    border-radius: 20px;
-  }
+ /* */
+ .top-bar {
+ position: relative;
+ z-index: 10;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+ padding-bottom: 24px;
+ }
+ .series-tag {
+ display: inline-flex;
+ align-items: center;
+ gap: 12px;
+ background: rgba(0, 0, 0, 0.3);
+ border: 1px solid rgba(255, 255, 255, 0.5);
+ padding: 10px 24px;
+ border-radius: 40px;
+ font-size: 18px;
+ font-weight: 800;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ backdrop-filter: blur(10px);
+ }
+ .series-tag .dot {
+ width: 12px;
+ height: 12px;
+ background: #FFEB3B;
+ border-radius: 50%;
+ box-shadow: 0 0 12px #FFEB3B;
+ }
+ .version-tag {
+ font-family: 'JetBrains Mono', monospace;
+ font-size: 19px;
+ font-weight: 700;
+ color: rgba(255, 255, 255, 0.95);
+ letter-spacing: 1px;
+ background: rgba(0, 0, 0, 0.25);
+ padding: 8px 18px;
+ border-radius: 20px;
+ }
 
-  /* 核心标题区 - 顶级大气大字排版 */
-  .main-title-box {
-    position: relative;
-    z-index: 10;
-    margin-top: 20px;
-  }
-  .badge-category {
-    font-family: 'JetBrains Mono', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    color: #FFEB3B;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  }
-  .badge-category::before {
-    content: '';
-    display: inline-block;
-    width: 32px;
-    height: 4px;
-    background: #FFEB3B;
-    border-radius: 2px;
-  }
-  h1.book-title {
-    font-size: 76px;
-    font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    color: #ffffff;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
-    margin-bottom: 20px;
-  }
-  h1.book-title span.accent {
-    color: #FFEB3B;
-  }
-  .book-subtitle {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.45;
-    color: #ffffff;
-    max-width: 960px;
-    background: rgba(0, 0, 0, 0.35);
-    padding: 16px 28px;
-    border-radius: 12px;
-    border-left: 8px solid #FFEB3B;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  }
+ /* - */
+ .main-title-box {
+ position: relative;
+ z-index: 10;
+ margin-top: 20px;
+ }
+ .badge-category {
+ font-family: 'JetBrains Mono', sans-serif;
+ font-size: 20px;
+ font-weight: 800;
+ color: #FFEB3B;
+ letter-spacing: 4px;
+ text-transform: uppercase;
+ margin-bottom: 16px;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+ }
+ .badge-category::before {
+ content: '';
+ display: inline-block;
+ width: 32px;
+ height: 4px;
+ background: #FFEB3B;
+ border-radius: 2px;
+ }
+ h1.book-title {
+ font-size: 76px;
+ font-weight: 900;
+ line-height: 1.15;
+ letter-spacing: -1.5px;
+ color: #ffffff;
+ text-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+ margin-bottom: 20px;
+ }
+ h1.book-title span.accent {
+ color: #FFEB3B;
+ }
+ .book-subtitle {
+ font-size: 26px;
+ font-weight: 700;
+ line-height: 1.45;
+ color: #ffffff;
+ max-width: 960px;
+ background: rgba(0, 0, 0, 0.35);
+ padding: 16px 28px;
+ border-radius: 12px;
+ border-left: 8px solid #FFEB3B;
+ backdrop-filter: blur(12px);
+ box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+ }
 
-  /* 中间留白空间，让 Grok 生成的发光能量体完整展露 */
-  .hero-spacer {
-    position: relative;
-    z-index: 10;
-    height: 460px;
-  }
+ /* Grok */
+ .hero-spacer {
+ position: relative;
+ z-index: 10;
+ height: 460px;
+ }
 
-  /* 底部元数据区 - 严谨出版级规范 */
-  .bottom-box {
-    position: relative;
-    z-index: 10;
-  }
-  .meta-strip {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 16px;
-    padding: 20px 30px;
-    margin-bottom: 24px;
-  }
-  .meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .meta-item .lbl {
-    font-size: 14px;
-    color: #FFEB3B;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .meta-item .val {
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-  }
+ /* - */
+ .bottom-box {
+ position: relative;
+ z-index: 10;
+ }
+ .meta-strip {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background: rgba(0, 0, 0, 0.35);
+ backdrop-filter: blur(16px);
+ border: 1px solid rgba(255, 255, 255, 0.35);
+ border-radius: 16px;
+ padding: 20px 30px;
+ margin-bottom: 24px;
+ }
+ .meta-item {
+ display: flex;
+ flex-direction: column;
+ gap: 4px;
+ }
+ .meta-item .lbl {
+ font-size: 14px;
+ color: #FFEB3B;
+ font-weight: 800;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ }
+ .meta-item .val {
+ font-size: 18px;
+ font-weight: 700;
+ color: #ffffff;
+ }
 
-  .footer-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-top: 2px solid rgba(255, 255, 255, 0.4);
-    padding-top: 24px;
-  }
-  .author-info h3 {
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 6px;
-  }
-  .author-info p {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.9);
-  }
+ .footer-meta {
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-end;
+ border-top: 2px solid rgba(255, 255, 255, 0.4);
+ padding-top: 24px;
+ }
+ .author-info h3 {
+ font-size: 24px;
+ font-weight: 900;
+ margin-bottom: 6px;
+ }
+ .author-info p {
+ font-size: 16px;
+ color: rgba(255, 255, 255, 0.9);
+ }
 
-  .barcode-box {
-    text-align: right;
-  }
-  .barcode-lines {
-    display: inline-flex;
-    gap: 5px;
-    height: 52px;
-    align-items: flex-end;
-    background: #ffffff;
-    padding: 8px 16px;
-    border-radius: 6px;
-  }
-  .bar { background: #111111; width: 3px; height: 100%; }
-  .bar.thick { width: 8px; }
-  .bar.med { width: 5px; }
-  .bar.short { height: 75%; }
-  .barcode-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.95);
-    margin-top: 8px;
-    letter-spacing: 3px;
-    font-weight: 700;
-  }
+ .barcode-box {
+ text-align: right;
+ }
+ .barcode-lines {
+ display: inline-flex;
+ gap: 5px;
+ height: 52px;
+ align-items: flex-end;
+ background: #ffffff;
+ padding: 8px 16px;
+ border-radius: 6px;
+ }
+ .bar { background: #111111; width: 3px; height: 100%; }
+ .bar.thick { width: 8px; }
+ .bar.med { width: 5px; }
+ .bar.short { height: 75%; }
+ .barcode-num {
+ font-family: 'JetBrains Mono', monospace;
+ font-size: 15px;
+ color: rgba(255, 255, 255, 0.95);
+ margin-top: 8px;
+ letter-spacing: 3px;
+ font-weight: 700;
+ }
 </style>
 </head>
 <body>
-  <div class="bg-ai-art"></div>
-  <div class="vignette-overlay"></div>
+ <div class="bg-ai-art"></div>
+ <div class="vignette-overlay"></div>
 
-  <!-- 顶栏 -->
-  <div class="top-bar">
-    <div class="series-tag">
-      <div class="dot"></div>
-      <span>THE ORANGE PAPER SERIES · 橙皮书开源技术文库</span>
-    </div>
-    <div class="version-tag">2026 EDITION · AI GENERATED COVER</div>
-  </div>
+ <!-- -->
+ <div class="top-bar">
+ <div class="series-tag">
+ <div class="dot"></div>
+ <span>THE ORANGE PAPER SERIES · </span>
+ </div>
+ <div class="version-tag">2026 EDITION · AI GENERATED COVER</div>
+ </div>
 
-  <!-- 主标题 -->
-  <div class="main-title-box">
-    <div class="badge-category">AI AGENT CONTENT WORKFLOW // TECHNICAL MANUAL</div>
-    <h1 class="book-title">
-      微信公众号爆文创作<br>
-      <span class="accent">AI SKILL</span> 橙皮书
-    </h1>
-    <div class="book-subtitle">
-      从 0 到 1 打造 10w+ 工业化流水线 · 基于 Grok AI 纯原生封面艺术
-    </div>
-  </div>
+ <!-- -->
+ <div class="main-title-box">
+ <div class="badge-category">AI AGENT CONTENT WORKFLOW // TECHNICAL MANUAL</div>
+ <h1 class="book-title">
+ <br>
+ <span class="accent">AI SKILL</span> 
+ </h1>
+ <div class="book-subtitle">
+ 0 1 10w+ · Grok AI 
+ </div>
+ </div>
 
-  <!-- 中部留白：让 Grok 绘制的 8K 发光能量立方体震撼呈现 -->
-  <div class="hero-spacer"></div>
+ <!-- Grok 8K -->
+ <div class="hero-spacer"></div>
 
-  <!-- 底部元数据条与条形码 -->
-  <div class="bottom-box">
-    <div class="meta-strip">
-      <div class="meta-item">
-        <span class="lbl">封面插画生成</span>
-        <span class="val">Grok Imagine (3:4 High-Res)</span>
-      </div>
-      <div class="meta-item">
-        <span class="lbl">书籍规范标准</span>
-        <span class="val">huashu-bookwriter Blueprint</span>
-      </div>
-      <div class="meta-item">
-        <span class="lbl">核心流水线</span>
-        <span class="val">8 大开源 Skill 完整矩阵</span>
-      </div>
-    </div>
+ <!-- -->
+ <div class="bottom-box">
+ <div class="meta-strip">
+ <div class="meta-item">
+ <span class="lbl"></span>
+ <span class="val">Grok Imagine (3:4 High-Res)</span>
+ </div>
+ <div class="meta-item">
+ <span class="lbl"></span>
+ <span class="val">huashu-bookwriter Blueprint</span>
+ </div>
+ <div class="meta-item">
+ <span class="lbl"></span>
+ <span class="val">8 Skill </span>
+ </div>
+ </div>
 
-    <div class="footer-meta">
-      <div class="author-info">
-        <h3>开源内容工程协作组 (Open Content Ops Group)</h3>
-        <p>立足第一性原理，用真实素材填血肉。技术手册与工业级代码工具库。</p>
-      </div>
+ <div class="footer-meta">
+ <div class="author-info">
+ <h3> (Open Content Ops Group)</h3>
+ <p></p>
+ </div>
 
-      <div class="barcode-box">
-        <div class="barcode-lines">
-          <div class="bar thick"></div><div class="bar"></div><div class="bar med"></div>
-          <div class="bar"></div><div class="bar thick"></div><div class="bar med"></div>
-          <div class="bar"></div><div class="bar thick"></div><div class="bar"></div>
-          <div class="bar med"></div><div class="bar thick"></div><div class="bar"></div>
-        </div>
-        <div class="barcode-num">ISBN 978-7-GROK-ORANGE-2026</div>
-      </div>
-    </div>
-  </div>
+ <div class="barcode-box">
+ <div class="barcode-lines">
+ <div class="bar thick"></div><div class="bar"></div><div class="bar med"></div>
+ <div class="bar"></div><div class="bar thick"></div><div class="bar med"></div>
+ <div class="bar"></div><div class="bar thick"></div><div class="bar"></div>
+ <div class="bar med"></div><div class="bar thick"></div><div class="bar"></div>
+ </div>
+ <div class="barcode-num">ISBN 978-7-GROK-ORANGE-2026</div>
+ </div>
+ </div>
+ </div>
 </body>
 </html>
