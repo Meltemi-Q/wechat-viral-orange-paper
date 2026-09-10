@@ -7,7 +7,7 @@
   <img src="cover.png" alt="微信公众号爆文创作 AI Skill 橙皮书封面" width="460" style="border-radius: 8px; box-shadow: 0 12px 36px rgba(0,0,0,0.2);" />
 </p>
 
-[![PDF Release](https://img.shields.io/badge/PDF%20电子书-下载28页出版级精装专著(1.87MB)-ff6a00?style=for-the-badge&logo=adobeacrobatreader)](wechat-viral-orange-paper.pdf)
+[![PDF Release](https://img.shields.io/badge/PDF%20电子书-下载30页出版级精装专著(1.91MB)-ff6a00?style=for-the-badge&logo=adobeacrobatreader)](wechat-viral-orange-paper.pdf)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge)](LICENSE)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Skills%20Ready-6f42c1?style=for-the-badge)](skills/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](skills/)
@@ -160,7 +160,7 @@ Agent 将自动流转：
 
 - **[📄 docs/orange-paper.md（单文件万字完整版）](docs/orange-paper.md)**  
   包含全部 10 卷核心内容、全套代码解析、打分卡模板与 38 类套话拦截对照表。
-- **[📕 wechat-viral-orange-paper.pdf（28 页出版级精装专著完整版）](wechat-viral-orange-paper.pdf)**  
+- **[📕 wechat-viral-orange-paper.pdf（30 页出版级精装专著完整版）](wechat-viral-orange-paper.pdf)**  
   内嵌 4 套高精度原生矢量 SVG 工业图表、出版级自适应案例卡片与数据流表，彻底根治代码溢出，包含 Grok Imagine 直出的爱马仕橙白色精装封面（著者：宇龙）。
 - **分卷阅读**：
   - [卷一：底层哲学与破局点 —— 为什么 AI 直出必死？](docs/01-architecture-philosophy.md)
@@ -169,6 +169,16 @@ Agent 将自动流转：
   - [卷四：14 维文风 DNA 画像提取](docs/04-style-dna-profiler.md)
   - [卷五：去 AI 味反蒸馏与人性化质检](docs/05-anti-distill-humanizer.md)
   - [卷六：工具链与自动化工程实践](docs/06-tools-and-automation.md)
+
+---
+
+## 关于著者与《橙皮书系列》 (About)
+
+- **著者**：**宇龙 (Yulong)** —— AI Agent 工业化落地践行者、全链路内容工程操盘手。恪守第一性原理与 KISS 原则，坚守“AI 搭骨架，真人填血肉”的工业化人机协同范式。
+- **《宇龙橙皮书系列》(The Orange Paper Series)**：
+  - **卷一**：《微信公众号爆文创作 AI Skill 橙皮书》（本项目，30 页精装出版级专著）
+  - **卷二**：《Claude Code 终端智能化编程实战橙皮书》（筹备中，同系列统一视觉规范）
+- 更多创作初衷、算法对抗哲学与系列专著蓝图，请阅读独立专页：**[📖 ABOUT.md (关于著者与项目完整版)](ABOUT.md)**。
 
 ---
 
