@@ -1,19 +1,28 @@
 # 🍊 公众号爆文 AI 工业化生产橙皮书
 ### The Orange Paper of WeChat Viral Content Engineering: From WorkBuddy Expert System to 10w+ Pipeline
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Awesome](https://img.shields.io/badge/Awesome-WeChat_AI_Ops-orange.svg)](#)
-[![Python](https://img.shields.io/badge/Python-3.10+-brightgreen.svg)](#)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](#)
+<div align="center">
 
-> **这是一套立足于第一性原理，彻底解构微信公众号 10w+ 爆文底层逻辑的实战技术手册与工业级代码工具库。**  
-> 解构自 WorkBuddy 官方专家矩阵（`wechat-official-account-expert`、`viral-topic-master`）及真实商业号百万阅读实战经验。
+<p align="center">
+  <img src="cover.png" alt="公众号爆文AI工业化生产橙皮书封面" width="480" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
+</p>
+
+[![PDF Release](https://img.shields.io/badge/PDF%20电子书-下载精装完整版(1MB)-orange?style=for-the-badge&logo=adobeacrobatreader)](wechat-viral-orange-paper.pdf)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Meltemi-Q/wechat-viral-orange-paper?style=for-the-badge&logo=github)](https://github.com/Meltemi-Q/wechat-viral-orange-paper)
+
+</div>
+
+> **这是一套立足于第一性原理、彻底剔除假大空 AI 味，深度解构微信公众号 10w+ 爆文底层逻辑的实战技术手册、电子书与工业级工具库。**  
+> 逆向解构自 WorkBuddy 官方核心专家矩阵（`wechat-official-account-expert`、`viral-topic-master` 等），结合真实商业号 548 篇沉淀数据与第一手踩坑经验编撰而成。
+>
+> 📖 **PDF 精装全彩版**：[`wechat-viral-orange-paper.pdf`](wechat-viral-orange-paper.pdf)（内置高保真封面、出版级中文字体排版，适合 iPad、Kindle 及打印精读）。
 
 ---
 
 ## 📑 橙皮书核心导读 (The Orange Paper)
 
-你可以直接阅读 **[📄 docs/orange-paper.md (单文件精编完整版)](docs/orange-paper.md)**，或按章节深入学习：
+你可以直接阅读 **[📄 docs/orange-paper.md (彻底去 AI 味·单文件精编完整版)](docs/orange-paper.md)** 或下载 **[📕 PDF 精装版](wechat-viral-orange-paper.pdf)**，亦可分章节深入研读：
 
 - **[卷一：底层哲学与破局点 —— 为什么 AI 直出必死？](docs/01-architecture-philosophy.md)**  
   平台算法消重机制解析、“AI 搭骨架，真人填血肉”的工业化分工范式。
