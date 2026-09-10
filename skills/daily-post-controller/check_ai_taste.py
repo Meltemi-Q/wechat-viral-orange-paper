@@ -41,7 +41,7 @@ if __name__ == "__main__":
     # 未填的填空标记：直接拒绝，不打分
     unfilled = re.findall(r"【补一件事[^】]*】", text)
     if unfilled:
-        print(f"❌ 还有 {len(unfilled)} 处没填，不能推送：")
+        print(f"[拦截] 还有 {len(unfilled)} 处没填，不能推送：")
         for u in unfilled: print(" -", u[:60] + ("…" if len(u) > 60 else ""))
         sys.exit(2)
     rating, issues = check(text)

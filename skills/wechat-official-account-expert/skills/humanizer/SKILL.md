@@ -1,16 +1,16 @@
 ---
 name: humanizer
 description: "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Detects and fixes patterns including: inflated symbolism, promotional language, superficial analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, negative parallelisms, and excessive conjunctive phrases."
-description_zh: " AI "
+description_zh: "去除文本中的 AI 写作痕迹"
 description_en: "Remove AI writing patterns from text"
 version: 2.1.1
 allowed-tools:
- - Read
- - Write
- - Edit
- - Grep
- - Glob
- - AskUserQuestion
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 ---
 
 # Humanizer: Remove AI Writing Patterns
@@ -284,9 +284,9 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Problem:** AI chatbots often decorate headings or bullet points with emojis.
 
 **Before:**
-> **Launch Phase:** The product launches in Q3
-> **Key Insight:** Users prefer simplicity
-> [] **Next Steps:** Schedule follow-up meeting
+>  **Launch Phase:** The product launches in Q3
+>  **Key Insight:** Users prefer simplicity
+> [合格] **Next Steps:** Schedule follow-up meeting
 
 **After:**
 > The product launches in Q3. User research showed a preference for simplicity. Next step: schedule a follow-up meeting.
@@ -391,11 +391,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 2. Identify all instances of the patterns above
 3. Rewrite each problematic section
 4. Ensure the revised text:
- - Sounds natural when read aloud
- - Varies sentence structure naturally
- - Uses specific details over vague claims
- - Maintains appropriate tone for context
- - Uses simple constructions (is/are/has) where appropriate
+   - Sounds natural when read aloud
+   - Varies sentence structure naturally
+   - Uses specific details over vague claims
+   - Maintains appropriate tone for context
+   - Uses simple constructions (is/are/has) where appropriate
 5. Present the humanized version
 
 ## Output Format

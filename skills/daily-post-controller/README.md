@@ -1,46 +1,58 @@
-# ## Agent 
+# 安装说明（给商业号运营）
 
+三个技能包，装法一样，装一次就行。
 
+## 第一步：找到 ProductionPipeline 的技能文件夹
+
+在电脑资源管理器地址栏粘贴这个路径，回车：
 
 ```
-%USERPROFILE%\.agent\skills
+%USERPROFILE%\.production-pipeline\skills
 ```
 
+打开的就是技能文件夹（里面可能已经有别的文件夹，不用管）。
 
+## 第二步：把三个压缩包解压进去
 
-## ```
+解压后这个文件夹里应该多出三个子文件夹：
+
+```
 skills\
- gzh-daily-post-skill\ ← 
- gzh-cover-skill\ ← 
- agent-wxmp-starter\ ← 
+  gzh-daily-post-skill\      ← 日更总控（写文章）
+  gzh-cover-skill\           ← 封面
+  production-pipeline-wxmp-starter\    ← 推草稿箱
 ```
 
- `SKILL.md`
+每个子文件夹里都直接有一个 `SKILL.md`。如果解压出来多套了一层同名文件夹，把里面那层拖出来。
 
-## Agent 
+## 第三步：重启 ProductionPipeline
 
+完全退出再打开（右下角托盘图标右键退出）。
 
+## 第四步：装 Python（只做一次，5 分钟）
 
-## Python5 
+封面和推送两个功能要用到 Python。对 ProductionPipeline 说：
 
- Python Agent 
+> 帮我检查电脑上有没有 Python，没有就帮我装一个，装好后再装 pillow 和 requests 两个库
 
-> Python pillow requests 
+它会自己处理。装好后说一句「测试一下封面」，能出图就是好了。
 
+## 日常怎么用
 
-
-## | | |
+| 你说 | 它做 |
 |---|---|
-| | 3 |
-| | |
-| | |
-| | |
-| …… | |
-| | |
+| 今天写一篇 | 搭好文章骨架，留 3 处让你填几句真事 |
+| 补好了 | 接上你的话，自检，出封面，给你看预览 |
+| 可以 | 推到公众号草稿箱（不会群发，群发你自己在后台点）|
+| 今天自动出一篇 | 不用你填，从素材库取真事（素材库要先填过）|
+| 记一条素材：…… | 往素材库加一件你的真事 |
+| 做个封面：标题 | 只出封面图 |
 
-## IP 
+## 推送时提示「IP 不在白名单」怎么办
 
- IP Agent IP 30 IP 
+不是坏了，是家里宽带的 IP 变了（隔几天到几周会变一次）。ProductionPipeline 会把新 IP 报给你，照它说的三步进公众号后台填进去，等 30 秒，说「再推一次」就好。旧的 IP 不用删。
 
-## 1. 
-2. 
+## 两条规矩
+
+1. 文章里的真事只能是你自己的。它留的空你填，或者提前记进素材库，它不会编。
+2. 它只推草稿箱，永远不群发。群发前你在后台再看一眼。

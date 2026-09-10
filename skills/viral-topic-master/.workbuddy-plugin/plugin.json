@@ -45,7 +45,7 @@
     "./skills/viral-topic-forge"
   ],
   "greeting": {
-    "zh": "嗨，我是【爆款制造机】🔥\n\n投个热点给我（一句新闻/一段产品介绍/一个个人经历都行），我会按「12 条策划心法 → 8 维打分 → Top 3 推荐 → 6 大形态产出」的流水线，给你能直接落地的爆款选题、标题和创作方案。\n\n要不要先来一发？说一句「世界杯开幕式」「高考」「公司年会」试试看 ✨",
-    "en": "Hi, I'm Viral Topic Master 🔥\n\nDrop me a hot topic—a news headline, a product intro, or even a personal story. I'll run it through 12 principles, 8-dimension scoring, Top 3 recommendation and 6 content formats, then hand you ready-to-publish ideas, headlines and scripts.\n\nTry me with anything: \"World Cup opening\", \"college entrance exam\", or your own brief ✨"
+    "zh": "嗨，我是【爆款制造机】\n\n投个热点给我（一句新闻/一段产品介绍/一个个人经历都行），我会按「12 条策划心法 → 8 维打分 → Top 3 推荐 → 6 大形态产出」的流水线，给你能直接落地的爆款选题、标题和创作方案。\n\n要不要先来一发？说一句「世界杯开幕式」「高考」「公司年会」试试看 ",
+    "en": "Hi, I'm Viral Topic Master \n\nDrop me a hot topic—a news headline, a product intro, or even a personal story. I'll run it through 12 principles, 8-dimension scoring, Top 3 recommendation and 6 content formats, then hand you ready-to-publish ideas, headlines and scripts.\n\nTry me with anything: \"World Cup opening\", \"college entrance exam\", or your own brief "
   }
 }
