@@ -14,7 +14,7 @@
 </div>
 
 > **这是一套立足于第一性原理、彻底剔除假大空 AI 味，深度解构微信公众号 10w+ 爆文底层逻辑的实战技术手册、电子书与工业级工具库。**  
-> 逆向解构自 WorkBuddy 官方核心专家矩阵（`wechat-official-account-expert`、`viral-topic-master` 等），结合真实商业号 548 篇沉淀数据与第一手踩坑经验编撰而成。
+> 实战解构自 WorkBuddy 官方核心专家矩阵（`wechat-official-account-expert`、`viral-topic-master` 等），结合真实商业号 548 篇沉淀数据与第一手踩坑经验编撰而成。
 >
 > 📖 **PDF 精装全彩版**：[`wechat-viral-orange-paper.pdf`](wechat-viral-orange-paper.pdf)（内置高保真封面、出版级中文字体排版，适合 iPad、Kindle 及打印精读）。
 
@@ -34,7 +34,9 @@
   14 维文风画像模型、标点与段落配方（1~3句/段）、口语断句与真人灵魂注入。
 - **[卷五：去 AI 味与反蒸馏工程 (Anti-Distill & Humanizer)](docs/05-anti-distill-humanizer.md)**  
   38 类 AI 典型套路词清洗黑名单、真情实感瑕疵注入技巧、Python 自动化打分自检。
-- **[卷六：工具链与 CLI 实践 —— 微信爆文全自动工程化](docs/06-tools-and-automation.md)**  
+- **[卷六：工具链与 CLI 实践 —— 微信爆文全自动工程化](docs/06-tools-and-automation.md)**
+- **[卷七：业界流派借鉴 —— 花叔极客流 vs WorkBuddy 工业流的实战融合](docs/07-huashu-vs-workbuddy.md)**  
+  花叔/花生AI 真实实测账本法、Few-Shot 文风克隆、人机协同工序与 WorkBuddy 工业化多 Agent 矩阵融合。  
   搜狗微信文章检索爬虫、文风提取器、高点击封面视觉规范、微信官方草稿箱 API 闭环。
 
 ---

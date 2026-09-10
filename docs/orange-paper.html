@@ -4,321 +4,311 @@
 <meta charset="UTF-8">
 <title>公众号爆文 AI 工业化生产橙皮书</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
-
-@page {
-    size: A4 portrait;
-    margin: 20mm 16mm 20mm 16mm;
-    @bottom-right {
-        content: counter(page);
-        font-size: 9pt;
-        color: #888;
-    }
-}
-
-@page :first {
-    margin: 0;
-    @bottom-right {
-        content: none;
-    }
-}
-
-* {
-    box-sizing: border-box;
+  /* 基础与排版体系（字体放大、加大行距，舒适阅读） */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    color: #222222;
+    background-color: #f7f9fa;
+    line-height: 1.78;
+    font-size: 16.5px;
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    color: #1f2937;
-    background-color: #ffffff;
-    line-height: 1.75;
-    font-size: 11pt;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-}
-
-/* ================== 封皮设计 (COVER PAGE) ================== */
-.cover-page {
-    page-break-after: always;
-    height: 100vh;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm;
     min-height: 297mm;
-    background: linear-gradient(135deg, #FF5E00 0%, #E64A00 50%, #18181B 100%);
-    color: #ffffff;
+    margin: 20px auto;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    box-sizing: border-box;
+    page-break-after: always;
+  }
+  @media print {
+    body { background: transparent; }
+    .page {
+      margin: 0;
+      width: 210mm;
+      height: 297mm;
+      box-shadow: none;
+      page-break-after: always;
+    }
+  }
+
+  /* 亮橙封面页专属样式 - 彻底告别暗红，拥抱纯正亮橙大字 */
+  .cover-page {
+    background: #FF5500;
+    background: linear-gradient(145deg, #FF6600 0%, #FF5000 45%, #FF3D00 100%) !important;
+    color: #ffffff !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 50mm 24mm 28mm 24mm;
+    padding: 24mm 20mm;
+    height: 297mm;
+    box-sizing: border-box;
     position: relative;
     overflow: hidden;
-}
-
-.cover-page::before {
-    content: "";
+  }
+  .cover-page .bg-grid {
     position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-}
-
-.cover-header {
-    z-index: 2;
-}
-
-.cover-badge {
-    display: inline-block;
-    padding: 6px 14px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    font-size: 11pt;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #FFF0EB;
-    margin-bottom: 24px;
-}
-
-.cover-title {
-    font-size: 38pt;
-    font-weight: 900;
-    line-height: 1.25;
-    margin-bottom: 18px;
-    color: #FFFFFF;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    letter-spacing: -1px;
-}
-
-.cover-subtitle {
-    font-size: 16pt;
-    font-weight: 400;
-    color: #FFE2D4;
-    line-height: 1.5;
-    max-width: 85%;
-    margin-bottom: 30px;
-    border-left: 4px solid #FFFFFF;
-    padding-left: 14px;
-}
-
-.cover-meta-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 40px;
-    max-width: 70%;
-    z-index: 2;
-}
-
-.cover-meta-card {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.28) 0%, transparent 40%),
+      radial-gradient(circle at 15% 85%, rgba(255, 200, 0, 0.3) 0%, transparent 50%),
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .cover-page * { position: relative; z-index: 10; }
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 14px;
+  }
+  .cover-badge {
     background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 12px 16px;
-    border-radius: 6px;
-}
-
-.cover-meta-card .label {
-    font-size: 9pt;
-    color: #FDBA74;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.cover-meta-card .value {
-    font-size: 11pt;
-    font-weight: 600;
-    color: #FFFFFF;
-    margin-top: 4px;
-}
-
-.cover-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    padding-top: 18px;
+  }
+  .cover-ver {
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .cover-title-box {
+    margin-top: 15px;
+  }
+  .cover-cat {
+    font-size: 14px;
+    font-weight: 800;
+    color: #FFEB3B;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .cover-main-title {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 16px;
+  }
+  .cover-main-title span {
+    color: #FFEB3B;
+  }
+  .cover-sub {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.45;
+    background: rgba(0, 0, 0, 0.22);
+    padding: 12px 18px;
+    border-radius: 10px;
+    border-left: 6px solid #FFEB3B;
+  }
+  .cover-cards {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .cover-card-box {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+  .cover-card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #FFEB3B;
+    margin-bottom: 10px;
+  }
+  .cover-pipeline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .cover-step {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cover-step-num {
+    background: #FFEB3B;
+    color: #D63B00;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  .cover-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cover-stat-item {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+  .cover-stat-val {
+    font-size: 32px;
+    font-weight: 900;
+    color: #FFEB3B;
+    line-height: 1;
+  }
+  .cover-stat-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 6px;
+    font-weight: 700;
+  }
+  .cover-bottom {
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    padding-top: 14px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    font-size: 10pt;
-    color: #FFEDD5;
-    z-index: 2;
-}
+  }
+  .cover-auth h3 { font-size: 16px; font-weight: 900; margin-bottom: 4px; }
+  .cover-auth p { font-size: 12px; color: rgba(255, 255, 255, 0.88); margin-bottom: 6px; }
+  .cover-pills { display: flex; gap: 8px; }
+  .cover-pill {
+    background: #ffffff;
+    color: #D63B00;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
 
-.cover-footer-left .author {
-    font-size: 13pt;
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
-.cover-footer-left .community {
-    font-size: 9.5pt;
-    color: #FED7AA;
-    margin-top: 4px;
-}
-
-.cover-footer-right {
-    text-align: right;
-    font-family: 'Fira Code', monospace;
-    font-size: 9pt;
-    color: #FDBA74;
-}
-
-/* ================== 正文排版 (CONTENT STYLING) ================== */
-.content-wrapper {
-    padding: 0;
-}
-
-h1, h2, h3, h4 {
-    color: #0f172a;
-    font-weight: 700;
+  /* 内页正文排版（大字号、大气排版） */
+  .content-page {
+    padding: 24mm 22mm;
+    box-sizing: border-box;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111111;
+    border-left: 6px solid #FF5500;
+    padding-left: 14px;
+    margin-top: 28px;
+    margin-bottom: 18px;
     page-break-after: avoid;
-}
-
-h1 {
-    font-size: 22pt;
-    border-bottom: 2px solid #FF5E00;
-    padding-bottom: 8px;
-    margin-top: 36px;
-    margin-bottom: 20px;
-    page-break-before: always;
-}
-
-/* 序言不单独换大页 */
-.content-wrapper > h1:first-of-type {
-    page-break-before: avoid;
-    margin-top: 10px;
-}
-
-h2 {
-    font-size: 15pt;
-    color: #C2410C;
-    margin-top: 26px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #D63B00;
+    border-bottom: 2px solid #FFE0B2;
+    padding-bottom: 6px;
+    margin-top: 24px;
     margin-bottom: 14px;
-    border-left: 4px solid #FF5E00;
-    padding-left: 10px;
-}
-
-h3 {
-    font-size: 12.5pt;
-    color: #1e293b;
-    margin-top: 20px;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+    margin-top: 18px;
     margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: 12px;
-    text-align: justify;
-}
-
-ul, ol {
-    margin-left: 20px;
+    page-break-after: avoid;
+  }
+  p {
     margin-bottom: 14px;
-}
-
-li {
-    margin-bottom: 6px;
-}
-
-strong {
-    color: #0f172a;
-    font-weight: 600;
-}
-
-blockquote {
-    background: #FFF7ED;
-    border-left: 4px solid #EA580C;
-    padding: 12px 16px;
-    margin: 16px 0;
-    border-radius: 0 6px 6px 0;
-    color: #9A3412;
-    font-size: 10.5pt;
-}
-
-table {
+    text-align: justify;
+    font-size: 16px;
+    color: #333333;
+  }
+  ul, ol {
+    margin-bottom: 16px;
+    padding-left: 24px;
+    font-size: 16px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  blockquote {
+    border-left: 5px solid #FF5500;
+    background: #FFF8E1;
+    margin: 18px 0;
+    padding: 14px 20px;
+    font-size: 15.5px;
+    color: #4E342E;
+    border-radius: 0 8px 8px 0;
+    page-break-inside: avoid;
+  }
+  table {
     width: 100%;
     border-collapse: collapse;
     margin: 18px 0;
-    font-size: 9.5pt;
+    font-size: 15px;
     page-break-inside: avoid;
-}
-
-th, td {
-    border: 1px solid #E2E8F0;
-    padding: 9px 12px;
+  }
+  th, td {
+    border: 1px solid #E0E0E0;
+    padding: 10px 14px;
     text-align: left;
-}
-
-th {
-    background-color: #F8FAFC;
-    color: #0F172A;
-    font-weight: 600;
-}
-
-tr:nth-child(even) {
+  }
+  th {
+    background-color: #FFF3E0;
+    color: #E65100;
+    font-weight: 700;
+  }
+  tr:nth-child(even) {
     background-color: #FAFAFA;
-}
-
-pre, code {
-    font-family: 'Fira Code', Consolas, Monaco, monospace;
-}
-
-p code, li code {
-    background: #F1F5F9;
-    color: #C2410C;
+  }
+  pre {
+    background: #1E1E1E;
+    color: #D4D4D4;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+    font-size: 13.5px;
+    line-height: 1.6;
+    overflow-x: auto;
+    page-break-inside: avoid;
+    margin: 16px 0;
+    border-left: 5px solid #FF5500;
+  }
+  code {
+    font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+    background: #FFF3E0;
+    color: #E65100;
     padding: 2px 6px;
     border-radius: 4px;
-    font-size: 9.5pt;
-}
-
-pre {
-    background: #1E293B;
-    color: #F8FAFC;
-    padding: 14px 18px;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-size: 9.5pt;
-    line-height: 1.55;
-    margin: 16px 0;
-    page-break-inside: avoid;
-}
-
-pre code {
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  pre code {
     background: transparent;
     color: inherit;
     padding: 0;
-}
-
-.mermaid-box {
-    background: #F8FAFC;
-    border: 1px solid #CBD5E1;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin: 16px 0;
-    page-break-inside: avoid;
-}
-
-.mermaid-box .box-title {
-    font-size: 10pt;
-    font-weight: 600;
-    color: #EA580C;
-    margin-bottom: 8px;
-    border-bottom: 1px dashed #CBD5E1;
-    padding-bottom: 4px;
-}
-
-.mermaid-box pre {
-    background: transparent;
-    color: #334155;
-    padding: 0;
-    font-size: 9pt;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid #E2E8F0;
-    margin: 24px 0;
-}
+    font-weight: normal;
+  }
 </style>
 </head>
 <body>
@@ -328,7 +318,7 @@ hr {
     <div class="cover-header">
         <div class="cover-badge">ORANGE PAPER · 2026 EDITION</div>
         <div class="cover-title">公众号爆文 AI<br>工业化生产橙皮书</div>
-        <div class="cover-subtitle">从 WorkBuddy 专家逆向到 10w+ 工业级生产流水线</div>
+        <div class="cover-subtitle">从 WorkBuddy 专家深度拆解到 10w+ 工业级生产流水线</div>
         
         <div class="cover-meta-grid">
             <div class="cover-meta-card">
@@ -365,7 +355,7 @@ hr {
 <!-- 正文区域 -->
 <div class="content-wrapper">
 <h1 id="ai">🍊 公众号爆文 AI 工业化生产橙皮书</h1>
-<h2 id="workbuddy-10w">—— 从 WorkBuddy 专家逆向到 10w+ 工业级生产流水线</h2>
+<h2 id="workbuddy-10w">—— 从 WorkBuddy 专家深度拆解到 10w+ 工业级生产流水线</h2>
 <blockquote>
 <p><strong>出品</strong>：Meltemi-Q &amp; 实战开源社区<br />
 <strong>版本</strong>：v1.0.0 完整实战版<br />
@@ -693,6 +683,41 @@ python check_ai_taste.py &quot;posts/today_article.md&quot;
 但那颗驱动装甲的心脏，必须是你自己的。</p>
 <p>祝你在自媒体的下半场，做稳流量主，把真话说给同频的人听。</p>
 </div>
+
+
+  <!-- 卷七：业界流派借鉴 -->
+  <div class="page content-page">
+    <h1>卷七：业界流派借鉴 —— 花叔极客流 vs WorkBuddy 工业流的实战融合</h1>
+    <blockquote>
+      <strong>“不要让 AI 当创作者，让 AI 当打工人。读者关注你，是为了看一个活生生的人在真实世界里跌打滚爬，而不是看一台发热的服务器吐出毫无瑕疵的平庸废话。”</strong>
+    </blockquote>
+
+    <h2>7.1 公众号 AI 创作的两大流派</h2>
+    <p>在微信生态的 AI 创作者群体中，目前存在两大极具代表性的实战流派：</p>
+    <table>
+      <thead>
+        <tr><th>对比维度</th><th>【花叔极客流】(Huasheng/花叔模式)</th><th>【WorkBuddy 工业流】(官方专家矩阵模式)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>核心哲学</strong></td><td><strong>工匠赋能 (Craftsman Solo)</strong><br>轻量、高灵活性、一人成军</td><td><strong>标准化流水线 (Assembly Line)</strong><br>分工明确、多 Agent 协同、工业质检</td></tr>
+        <tr><td><strong>打法定位</strong></td><td>个人 IP、极客博主、深度技术与硬核实操</td><td>商业矩阵号、垂直行业号、团队化日更运营</td></tr>
+        <tr><td><strong>选题策略</strong></td><td>第一视角真实经历、突发热点第一时间实测</td><td>搜狗/全网爆款对标、8 维量化打分卡（≥30分立项）</td></tr>
+        <tr><td><strong>文风控制</strong></td><td>作者个人 Few-Shot 样本克隆 + 人工真实吐槽</td><td>14 维文风 DNA 特征建模 + 口语化断句配方</td></tr>
+        <tr><td><strong>工具形态</strong></td><td>个人轻量 CLI / 单一精准 Skill / 极简脚本</td><td>多专家包编排 / 反蒸馏清洗器 / 微信草稿箱 API</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7.2 花叔极客流的 4 大精髓 Skill 实践</h2>
+    <ol>
+      <li><strong>真实生活与实测“账本化”：</strong>拒绝概念叙事。不写“AI 颠覆行业”，而是写“我昨天用这个工具写了 3000 行代码，耗费了 0.42 美元，踩了 3 个坑，其中一个坑卡了我两个小时”。带时间戳的报错截图、后台真实折线图胜过千言万语。</li>
+      <li><strong>Few-Shot 文风强约束注入：</strong>不写“请幽默接地气”，而是直接喂给模型 3 段自己以往写过的爆款真实语录，强制模型模仿短促断句与口头禅。</li>
+      <li><strong>半自动人机协同 (Human-in-the-loop)：</strong>AI 负责收集素材与整理脉络，真人负责敲定核心态度、注入亲身八卦与踩坑细节、最后 15 分钟人工精修。</li>
+      <li><strong>极致遵循 KISS 原则的单任务 CLI：</strong>一个脚本只做好一件事，拒绝过度封装。</li>
+    </ol>
+
+    <h2>7.3 两派合流：打造 10w+ 终极生产线</h2>
+    <p>真正的顶尖内容创作者，应当将 <strong>WorkBuddy 的工业化严密工序</strong> 与 <strong>花叔的活人体温血肉</strong> 深度缝合：用 WorkBuddy 解决选题枯竭、标题平庸与排版繁琐，用花叔极客流解决假大空机器味，实现效率与传播力的双重突破！</p>
+  </div>
 
 </body>
 </html>

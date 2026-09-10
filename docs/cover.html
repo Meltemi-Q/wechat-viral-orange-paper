@@ -2,151 +2,371 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<title>公众号爆文 AI 工业化生产橙皮书 封面</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&family=JetBrains+Mono:wght@600&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
     width: 1200px;
     height: 1600px;
-    background: linear-gradient(135deg, #FF5E00 0%, #E64A00 50%, #18181B 100%);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #FF5500;
+    background: linear-gradient(145deg, #FF6600 0%, #FF5000 45%, #FF3D00 100%);
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
     color: #ffffff;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 120px 90px 90px 90px;
-    position: relative;
-    overflow: hidden;
-}
-body::before {
-    content: "";
+    padding: 100px 90px;
+  }
+
+  /* 科技几何背景纹理 - 亮橙专属科技网格与柔和极光光晕 */
+  .bg-grid {
     position: absolute;
-    top: -150px;
-    right: -150px;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 70%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.28) 0%, transparent 40%),
+      radial-gradient(circle at 15% 85%, rgba(255, 200, 0, 0.3) 0%, transparent 50%),
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* 顶栏信息 */
+  .top-bar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 28px;
+  }
+  .series-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .series-tag .dot {
+    width: 14px;
+    height: 14px;
+    background: #FFEB3B;
     border-radius: 50%;
-}
-.cover-badge {
+    box-shadow: 0 0 12px #FFEB3B;
+  }
+  .version-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 1px;
+  }
+
+  /* 核心标题区 - 超大字号！震撼视觉冲击力！ */
+  .main-title-box {
+    position: relative;
+    z-index: 10;
+    margin-top: 30px;
+  }
+  .badge-category {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #FFEB3B;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .badge-category::before {
+    content: '';
     display: inline-block;
-    padding: 10px 22px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 8px;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #FFF0EB;
-    margin-bottom: 40px;
-}
-.cover-title {
-    font-size: 64px;
+    width: 36px;
+    height: 5px;
+    background: #FFEB3B;
+    border-radius: 2px;
+  }
+  h1.book-title {
+    font-size: 82px;
     font-weight: 900;
-    line-height: 1.25;
-    margin-bottom: 30px;
-    color: #FFFFFF;
-    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-    letter-spacing: -1px;
-}
-.cover-subtitle {
-    font-size: 28px;
-    font-weight: 400;
-    color: #FFE2D4;
-    line-height: 1.5;
-    max-width: 90%;
-    margin-bottom: 60px;
-    border-left: 6px solid #FFFFFF;
-    padding-left: 24px;
-}
-.cover-meta-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-    max-width: 85%;
-}
-.cover-meta-card {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 20px 26px;
-    border-radius: 12px;
-}
-.cover-meta-card .label {
-    font-size: 15px;
-    color: #FDBA74;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-.cover-meta-card .value {
-    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    text-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+    margin-bottom: 28px;
+  }
+  h1.book-title span.accent {
+    color: #FFEB3B;
+    display: inline;
+  }
+  .book-subtitle {
+    font-size: 32px;
     font-weight: 700;
-    color: #FFFFFF;
-    margin-top: 8px;
-}
-.cover-footer {
-    border-top: 2px solid rgba(255, 255, 255, 0.25);
-    padding-top: 36px;
+    line-height: 1.45;
+    color: #ffffff;
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.24);
+    padding: 20px 32px;
+    border-radius: 14px;
+    border-left: 8px solid #FFEB3B;
+    backdrop-filter: blur(10px);
+  }
+
+  /* 中间视觉核心 - 极客工业发光图表卡片 */
+  .visual-center {
+    position: relative;
+    z-index: 10;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 28px;
+  }
+  .hero-card {
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 22px;
+    padding: 36px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  .hero-card-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #FFEB3B;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pipeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 21px;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.24);
+    padding: 14px 22px;
+    border-radius: 12px;
+  }
+  .step-num {
+    background: #FFEB3B;
+    color: #D63B00;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 900;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+  }
+  .stats-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .stat-box {
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 18px;
+    padding: 26px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .stat-val {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #FFEB3B;
+    line-height: 1;
+  }
+  .stat-desc {
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: 10px;
+    font-weight: 700;
+  }
+
+  /* 底部元数据与出版信息 */
+  .footer-meta {
+    position: relative;
+    z-index: 10;
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    padding-top: 32px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    font-size: 18px;
-    color: #FFEDD5;
-}
-.cover-footer-left .author {
-    font-size: 24px;
+  }
+  .author-info h3 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  .author-info p {
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+  .badge-pills {
+    display: flex;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .badge-pill {
+    background: #ffffff;
+    color: #D63B00;
+    font-size: 17px;
     font-weight: 800;
-    color: #FFFFFF;
-}
-.cover-footer-left .community {
-    font-size: 16px;
-    color: #FED7AA;
-    margin-top: 8px;
-}
-.cover-footer-right {
+    padding: 8px 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 仿真条形码 */
+  .barcode-box {
     text-align: right;
-    font-family: 'Fira Code', monospace;
-    font-size: 15px;
-    color: #FDBA74;
-}
+  }
+  .barcode-lines {
+    display: inline-flex;
+    gap: 5px;
+    height: 56px;
+    align-items: flex-end;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+  }
+  .bar {
+    background: #111111;
+    width: 3px;
+    height: 100%;
+  }
+  .bar.thick { width: 8px; }
+  .bar.med { width: 5px; }
+  .bar.short { height: 75%; }
+  .barcode-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+  }
 </style>
 </head>
 <body>
-    <div>
-        <div class="cover-badge">ORANGE PAPER · 2026 EDITION</div>
-        <div class="cover-title">公众号爆文 AI<br>工业化生产橙皮书</div>
-        <div class="cover-subtitle">从 WorkBuddy 专家逆向到 10w+ 工业级生产流水线</div>
-        
-        <div class="cover-meta-grid">
-            <div class="cover-meta-card">
-                <div class="label">Architecture / 架构体系</div>
-                <div class="value">WorkBuddy Agent 矩阵</div>
-            </div>
-            <div class="cover-meta-card">
-                <div class="label">Methodology / 核心方法论</div>
-                <div class="value">骨架血肉分离 · 去AI味质检</div>
-            </div>
-            <div class="cover-meta-card">
-                <div class="label">Field Tested / 实战样本</div>
-                <div class="value">548 篇真实商业号体检数据</div>
-            </div>
-            <div class="cover-meta-card">
-                <div class="label">Release / 发行版本</div>
-                <div class="value">v1.0.0 (Official Production)</div>
-            </div>
-        </div>
+  <div class="bg-grid"></div>
+
+  <!-- 顶栏 -->
+  <div class="top-bar">
+    <div class="series-tag">
+      <div class="dot"></div>
+      <span>THE ORANGE PAPER SERIES · 橙皮书开源技术文库</span>
     </div>
-    
-    <div class="cover-footer">
-        <div class="cover-footer-left">
-            <div class="author">Meltemi-Q & 实战开源社区</div>
-            <div class="community">开源项目：github.com/Meltemi-Q/wechat-viral-orange-paper</div>
-        </div>
-        <div class="cover-footer-right">
-            <div>DOCUMENT CLASSIFICATION: PUBLIC</div>
-            <div>LICENSE: APACHE 2.0</div>
-        </div>
+    <div class="version-tag">RELEASE 2026.1 / PRODUCTION</div>
+  </div>
+
+  <!-- 主标题区（字大、霸气、纯正亮橙） -->
+  <div class="main-title-box">
+    <div class="badge-category">WECHAT CONTENT ENGINEERING // PRACTICAL HANDBOOK</div>
+    <h1 class="book-title">
+      公众号爆文<br>
+      <span class="accent">AI 工业化生产</span>橙皮书
+    </h1>
+    <div class="book-subtitle">
+      深入剖析 WorkBuddy 专家内核 · 融合花叔极客流 10w+ 工业级生产线
     </div>
+  </div>
+
+  <!-- 视觉中枢卡片 -->
+  <div class="visual-center">
+    <div class="hero-card">
+      <div class="hero-card-title">
+        <span>CONTENT INDUSTRIAL PIPELINE</span>
+        <span>全链路四大核心工序</span>
+      </div>
+      <div class="pipeline-steps">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div>爆款四基因选题炼金炉 (≥30分立项)</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div>标题工程学：公域标签前置与 8 选 1 严选</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div>14 维文风 DNA 建模与骨肉分离架构</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <div>反蒸馏清洗：剔除 38 类套话与真事实感注入</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-card">
+      <div class="stat-box">
+        <div class="stat-val">548+</div>
+        <div class="stat-desc">真实原创体检数据沉淀</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">0%</div>
+        <div class="stat-desc">彻底剔除假大空机器味</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部出版与作者信息 -->
+  <div class="footer-meta">
+    <div class="author-info">
+      <h3>星辰内容工程实验室 & 开源创作者联盟</h3>
+      <p>立足第一性原理，恪守实战检验。拒绝 AI 直出垃圾，打造高完读率内容工程。</p>
+      <div class="badge-pills">
+        <span class="badge-pill">WorkBuddy 体系解构</span>
+        <span class="badge-pill">花叔极客流打法</span>
+        <span class="badge-pill">开箱即用 CLI 工具箱</span>
+      </div>
+    </div>
+
+    <div class="barcode-box">
+      <div class="barcode-lines">
+        <div class="bar thick"></div><div class="bar"></div><div class="bar med"></div>
+        <div class="bar"></div><div class="bar thick"></div><div class="bar med"></div>
+        <div class="bar"></div><div class="bar thick"></div><div class="bar"></div>
+        <div class="bar med"></div><div class="bar thick"></div><div class="bar"></div>
+      </div>
+      <div class="barcode-num">978-7-AI-ORANGE-2026</div>
+    </div>
+  </div>
 </body>
 </html>
