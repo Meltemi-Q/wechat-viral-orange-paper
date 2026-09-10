@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>微信公众号爆文创作 Skill 橙皮书 封面</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&family=JetBrains+Mono:wght@600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&family=JetBrains+Mono:wght@600;800&display=swap');
 
   * {
     margin: 0;
@@ -26,7 +26,6 @@
     padding: 100px 90px;
   }
 
-  /* 亮橙科技网格背景 */
   .bg-grid {
     position: absolute;
     top: 0;
@@ -43,7 +42,6 @@
     z-index: 1;
   }
 
-  /* 顶栏信息 */
   .top-bar {
     position: relative;
     z-index: 10;
@@ -81,7 +79,6 @@
     letter-spacing: 1px;
   }
 
-  /* 核心标题区 - 超大字号！纯净无私货 */
   .main-title-box {
     position: relative;
     z-index: 10;
@@ -121,7 +118,7 @@
     display: inline;
   }
   .book-subtitle {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 1.45;
     color: #ffffff;
@@ -133,123 +130,114 @@
     backdrop-filter: blur(10px);
   }
 
-  /* 视觉中枢卡片 - 聚焦 8 大核心 Skill */
-  .visual-center {
+  .meta-grid {
     position: relative;
     z-index: 10;
     margin: 30px 0;
     display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 28px;
   }
-  .hero-card {
+  .spec-card {
     background: rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 22px;
-    padding: 36px;
+    padding: 34px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   }
-  .hero-card-title {
-    font-size: 22px;
+  .spec-card-title {
+    font-size: 20px;
     font-weight: 800;
     color: #FFEB3B;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
-  .pipeline-steps {
+  .spec-list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-  }
-  .step-item {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-size: 21px;
-    font-weight: 700;
-    background: rgba(0, 0, 0, 0.24);
-    padding: 14px 22px;
-    border-radius: 12px;
-  }
-  .step-num {
-    background: #FFEB3B;
-    color: #D63B00;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 900;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 12px;
     font-size: 19px;
   }
-  .stats-card {
+  .spec-row {
+    display: flex;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.22);
+    padding: 12px 18px;
+    border-radius: 10px;
+    align-items: center;
+  }
+  .spec-k {
+    font-weight: 800;
+    color: #FFEB3B;
+    min-width: 90px;
+  }
+  .spec-v {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+  }
+
+  .summary-card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
   }
-  .stat-box {
+  .sum-box {
     background: rgba(0, 0, 0, 0.28);
     border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: 18px;
-    padding: 26px;
+    padding: 24px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .stat-val {
-    font-family: 'JetBrains Mono', sans-serif;
-    font-size: 48px;
+  .sum-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 44px;
     font-weight: 900;
     color: #FFEB3B;
     line-height: 1;
   }
-  .stat-desc {
-    font-size: 19px;
+  .sum-lbl {
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.95);
-    margin-top: 10px;
+    margin-top: 8px;
     font-weight: 700;
   }
 
-  /* 底部元数据 - 纯粹开源规范 */
   .footer-meta {
     position: relative;
     z-index: 10;
     border-top: 2px solid rgba(255, 255, 255, 0.4);
-    padding-top: 32px;
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
-  .author-info h3 {
-    font-size: 28px;
+  .source-note h3 {
+    font-size: 26px;
     font-weight: 900;
-    margin-bottom: 10px;
-    color: #ffffff;
+    margin-bottom: 8px;
   }
-  .author-info p {
-    font-size: 19px;
+  .source-note p {
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
   }
-  .badge-pills {
+  .pill-tags {
     display: flex;
-    gap: 14px;
-    margin-top: 16px;
+    gap: 12px;
+    margin-top: 14px;
   }
-  .badge-pill {
+  .pill-tag {
     background: #ffffff;
     color: #D63B00;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 800;
-    padding: 8px 18px;
+    padding: 6px 16px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .barcode-box {
@@ -258,25 +246,21 @@
   .barcode-lines {
     display: inline-flex;
     gap: 5px;
-    height: 56px;
+    height: 54px;
     align-items: flex-end;
     background: #ffffff;
     padding: 8px 16px;
     border-radius: 6px;
   }
-  .bar {
-    background: #111111;
-    width: 3px;
-    height: 100%;
-  }
+  .bar { background: #111111; width: 3px; height: 100%; }
   .bar.thick { width: 8px; }
   .bar.med { width: 5px; }
   .bar.short { height: 75%; }
   .barcode-num {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.95);
-    margin-top: 10px;
+    margin-top: 8px;
     letter-spacing: 3px;
     font-weight: 700;
   }
@@ -285,75 +269,71 @@
 <body>
   <div class="bg-grid"></div>
 
-  <!-- 顶栏 -->
   <div class="top-bar">
     <div class="series-tag">
       <div class="dot"></div>
-      <span>THE ORANGE PAPER SERIES · 橙皮书技术文库</span>
+      <span>THE ORANGE PAPER SERIES · 橙皮书系列</span>
     </div>
-    <div class="version-tag">OPEN SOURCE // SKILL SPECIFICATION</div>
+    <div class="version-tag">2026年9月 · 第1版</div>
   </div>
 
-  <!-- 主标题区（纯粹聚焦微信公众号爆文创作 Skill） -->
   <div class="main-title-box">
-    <div class="badge-category">AI AGENT CONTENT WORKFLOW // TECHNICAL MANUAL</div>
+    <div class="badge-category">ORANGE PAPER // TYPE B SPECIFICATION</div>
     <h1 class="book-title">
       微信公众号爆文创作<br>
-      <span class="accent">AI SKILL</span> 橙皮书
+      <span class="accent">SKILL 橙皮书</span>
     </h1>
     <div class="book-subtitle">
-      AI Agent 时代的内容工程学与开源 Skill 工业化落地指南
+      从 0 到 1 打造 10w+ 工业化流水线 · WeChat Viral Content Creation Skill
     </div>
   </div>
 
-  <!-- 视觉中枢卡片：展示 8 大核心 Skill 管道 -->
-  <div class="visual-center">
-    <div class="hero-card">
-      <div class="hero-card-title">
-        <span>CORE SKILL PIPELINE</span>
-        <span>四大核心生产工序</span>
+  <div class="meta-grid">
+    <div class="spec-card">
+      <div class="spec-card-title">
+        <span>BOOK SPECIFICATIONS</span>
+        <span>书籍元数据</span>
       </div>
-      <div class="pipeline-steps">
-        <div class="step-item">
-          <div class="step-num">01</div>
-          <div>爆款四基因选题炼金炉 Skill (≥30分立项)</div>
+      <div class="spec-list">
+        <div class="spec-row">
+          <div class="spec-k">适用生态</div>
+          <div class="spec-v">Claude Code / Agent Skills / Cursor</div>
         </div>
-        <div class="step-item">
-          <div class="step-num">02</div>
-          <div>公域标签前置与 8 选 1 标题严选 Skill</div>
+        <div class="spec-row">
+          <div class="spec-k">核心能力</div>
+          <div class="spec-v">选题炼金 · 标题8选1 · 文风DNA · 反蒸馏清洗 · 草稿箱推送</div>
         </div>
-        <div class="step-item">
-          <div class="step-num">03</div>
-          <div>14 维文风 DNA 建模与骨肉分离写作 Skill</div>
+        <div class="spec-row">
+          <div class="spec-k">信息来源</div>
+          <div class="spec-v">开源社区 · GitHub 仓库 · 微信公众号实战</div>
         </div>
-        <div class="step-item">
-          <div class="step-num">04</div>
-          <div>反蒸馏清洗：剔除 38 类套话与真事实感注入 Skill</div>
+        <div class="spec-row">
+          <div class="spec-k">全书架构</div>
+          <div class="spec-v">3 大 Part · 7 个 § 章节 · 开源生态附录</div>
         </div>
       </div>
     </div>
 
-    <div class="stats-card">
-      <div class="stat-box">
-        <div class="stat-val">8 大</div>
-        <div class="stat-desc">核心开源 Skill 架构定义</div>
+    <div class="summary-card">
+      <div class="sum-box">
+        <div class="sum-num">8 个</div>
+        <div class="sum-lbl">核心 Skill 标准工业级定义</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-val">100%</div>
-        <div class="stat-desc">纯净技术实操 · 拒绝假大空套话</div>
+      <div class="sum-box">
+        <div class="sum-num">≤25字</div>
+        <div class="sum-lbl">单句严格断句 · 零 AI 假大空</div>
       </div>
     </div>
   </div>
 
-  <!-- 底部纯粹技术出版信息 -->
   <div class="footer-meta">
-    <div class="author-info">
-      <h3>开源内容工程协作组 (Open Content Ops Group)</h3>
-      <p>立足第一性原理与开源生态。让 AI 专注搭骨架，用真实素材填血肉。</p>
-      <div class="badge-pills">
-        <span class="badge-pill">8 大核心 Skill 矩阵</span>
-        <span class="badge-pill">去 AI 味硬核规范</span>
-        <span class="badge-pill">开箱即用 CLI 工具箱</span>
+    <div class="source-note">
+      <h3>开源技术文档库 (Open Source Docs)</h3>
+      <p>遵循 huashu-bookwriter 蓝图与风格 DNA 编写。实事求是，以代码与数据为唯一准绳。</p>
+      <div class="pill-tags">
+        <span class="pill-tag">huashu-bookwriter 蓝图</span>
+        <span class="pill-tag">8 大核心 Skill</span>
+        <span class="pill-tag">开箱即用脚本</span>
       </div>
     </div>
 
@@ -364,7 +344,7 @@
         <div class="bar"></div><div class="bar thick"></div><div class="bar"></div>
         <div class="bar med"></div><div class="bar thick"></div><div class="bar"></div>
       </div>
-      <div class="barcode-num">978-7-AI-ORANGE-2026</div>
+      <div class="barcode-num">ISBN 978-7-WECHAT-SKILL-2026</div>
     </div>
   </div>
 </body>
