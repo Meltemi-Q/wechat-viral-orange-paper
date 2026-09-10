@@ -7,7 +7,7 @@
   <img src="cover.png" alt="微信公众号爆文创作 AI Skill 橙皮书封面" width="460" style="border-radius: 8px; box-shadow: 0 12px 36px rgba(0,0,0,0.2);" />
 </p>
 
-[![PDF Release](https://img.shields.io/badge/PDF%20电子书-下载24页精装完整版(1.75MB)-ff6a00?style=for-the-badge&logo=adobeacrobatreader)](wechat-viral-orange-paper.pdf)
+[![PDF Release](https://img.shields.io/badge/PDF%20电子书-下载28页出版级精装专著(1.87MB)-ff6a00?style=for-the-badge&logo=adobeacrobatreader)](wechat-viral-orange-paper.pdf)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge)](LICENSE)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Skills%20Ready-6f42c1?style=for-the-badge)](skills/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](skills/)
@@ -160,8 +160,8 @@ Agent 将自动流转：
 
 - **[📄 docs/orange-paper.md（单文件万字完整版）](docs/orange-paper.md)**  
   包含全部 10 卷核心内容、全套代码解析、打分卡模板与 38 类套话拦截对照表。
-- **[📕 wechat-viral-orange-paper.pdf（24 页精装排版完整版）](wechat-viral-orange-paper.pdf)**  
-  包含由 Grok Imagine 引擎直出的纯正爱马仕橙、带有白色精装书边框的 2D 封面（著者：宇龙），支持打印与离线高品质阅读。
+- **[📕 wechat-viral-orange-paper.pdf（28 页出版级精装专著完整版）](wechat-viral-orange-paper.pdf)**  
+  内嵌 4 套高精度原生矢量 SVG 工业图表、出版级自适应案例卡片与数据流表，彻底根治代码溢出，包含 Grok Imagine 直出的爱马仕橙白色精装封面（著者：宇龙）。
 - **分卷阅读**：
   - [卷一：底层哲学与破局点 —— 为什么 AI 直出必死？](docs/01-architecture-philosophy.md)
   - [卷二：10w+ 爆款选题炼金炉](docs/02-viral-topic-forge.md)
