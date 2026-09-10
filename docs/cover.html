@@ -14,230 +14,201 @@
   body {
     width: 1200px;
     height: 1600px;
-    background: #FF5500;
-    background: linear-gradient(145deg, #FF6600 0%, #FF5000 45%, #FF3D00 100%);
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
-    color: #ffffff;
+    background: #e65500;
     position: relative;
     overflow: hidden;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 100px 90px;
+    padding: 80px 85px;
   }
 
-  .bg-grid {
+  /* Grok 生成的 AI 艺术大图作为背景图层，完美居中充满 */
+  .bg-ai-art {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-      radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.28) 0%, transparent 40%),
-      radial-gradient(circle at 15% 85%, rgba(255, 200, 0, 0.3) 0%, transparent 50%),
-      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
-    pointer-events: none;
+    background-image: url('file:///D:/repos/wechat-viral-orange-paper/cover-3x4.jpg');
+    background-size: cover;
+    background-position: center;
     z-index: 1;
   }
 
+  /* 柔和的顶部与底部渐变暗部遮罩，确保文字极致清晰易读，保留中间发光能量体全貌 */
+  .vignette-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg, 
+      rgba(215, 75, 0, 0.92) 0%, 
+      rgba(215, 75, 0, 0.75) 18%, 
+      rgba(215, 75, 0, 0) 38%, 
+      rgba(215, 75, 0, 0) 65%, 
+      rgba(215, 75, 0, 0.85) 86%, 
+      rgba(200, 65, 0, 0.98) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* 顶栏 */
   .top-bar {
     position: relative;
     z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 28px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+    padding-bottom: 24px;
   }
   .series-tag {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    padding: 12px 28px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px 24px;
     border-radius: 40px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
+    backdrop-filter: blur(10px);
   }
   .series-tag .dot {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background: #FFEB3B;
     border-radius: 50%;
     box-shadow: 0 0 12px #FFEB3B;
   }
   .version-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.95);
     letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 8px 18px;
+    border-radius: 20px;
   }
 
+  /* 核心标题区 - 顶级大气大字排版 */
   .main-title-box {
     position: relative;
     z-index: 10;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .badge-category {
     font-family: 'JetBrains Mono', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
     color: #FFEB3B;
     letter-spacing: 4px;
     text-transform: uppercase;
-    margin-bottom: 22px;
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
   .badge-category::before {
     content: '';
     display: inline-block;
-    width: 36px;
-    height: 5px;
+    width: 32px;
+    height: 4px;
     background: #FFEB3B;
     border-radius: 2px;
   }
   h1.book-title {
-    font-size: 80px;
+    font-size: 76px;
     font-weight: 900;
     line-height: 1.15;
     letter-spacing: -1.5px;
     color: #ffffff;
-    text-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-    margin-bottom: 28px;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+    margin-bottom: 20px;
   }
   h1.book-title span.accent {
     color: #FFEB3B;
-    display: inline;
   }
   .book-subtitle {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
     line-height: 1.45;
     color: #ffffff;
-    max-width: 1000px;
-    background: rgba(0, 0, 0, 0.24);
-    padding: 20px 32px;
-    border-radius: 14px;
+    max-width: 960px;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 16px 28px;
+    border-radius: 12px;
     border-left: 8px solid #FFEB3B;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   }
 
-  .meta-grid {
+  /* 中间留白空间，让 Grok 生成的发光能量体完整展露 */
+  .hero-spacer {
     position: relative;
     z-index: 10;
-    margin: 30px 0;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 28px;
-  }
-  .spec-card {
-    background: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 22px;
-    padding: 34px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-  .spec-card-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #FFEB3B;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .spec-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    font-size: 19px;
-  }
-  .spec-row {
-    display: flex;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.22);
-    padding: 12px 18px;
-    border-radius: 10px;
-    align-items: center;
-  }
-  .spec-k {
-    font-weight: 800;
-    color: #FFEB3B;
-    min-width: 90px;
-  }
-  .spec-v {
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 600;
+    height: 460px;
   }
 
-  .summary-card {
+  /* 底部元数据区 - 严谨出版级规范 */
+  .bottom-box {
+    position: relative;
+    z-index: 10;
+  }
+  .meta-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+    padding: 20px 30px;
+    margin-bottom: 24px;
+  }
+  .meta-item {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 4px;
   }
-  .sum-box {
-    background: rgba(0, 0, 0, 0.28);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 18px;
-    padding: 24px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .sum-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 44px;
-    font-weight: 900;
+  .meta-item .lbl {
+    font-size: 14px;
     color: #FFEB3B;
-    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
-  .sum-lbl {
+  .meta-item .val {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.95);
-    margin-top: 8px;
     font-weight: 700;
+    color: #ffffff;
   }
 
   .footer-meta {
-    position: relative;
-    z-index: 10;
-    border-top: 2px solid rgba(255, 255, 255, 0.4);
-    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    padding-top: 24px;
   }
-  .source-note h3 {
-    font-size: 26px;
+  .author-info h3 {
+    font-size: 24px;
     font-weight: 900;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
-  .source-note p {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-  }
-  .pill-tags {
-    display: flex;
-    gap: 12px;
-    margin-top: 14px;
-  }
-  .pill-tag {
-    background: #ffffff;
-    color: #D63B00;
+  .author-info p {
     font-size: 16px;
-    font-weight: 800;
-    padding: 6px 16px;
-    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .barcode-box {
@@ -246,7 +217,7 @@
   .barcode-lines {
     display: inline-flex;
     gap: 5px;
-    height: 54px;
+    height: 52px;
     align-items: flex-end;
     background: #ffffff;
     padding: 8px 16px;
@@ -267,84 +238,65 @@
 </style>
 </head>
 <body>
-  <div class="bg-grid"></div>
+  <div class="bg-ai-art"></div>
+  <div class="vignette-overlay"></div>
 
+  <!-- 顶栏 -->
   <div class="top-bar">
     <div class="series-tag">
       <div class="dot"></div>
-      <span>THE ORANGE PAPER SERIES · 橙皮书系列</span>
+      <span>THE ORANGE PAPER SERIES · 橙皮书开源技术文库</span>
     </div>
-    <div class="version-tag">2026年9月 · 第1版</div>
+    <div class="version-tag">2026 EDITION · AI GENERATED COVER</div>
   </div>
 
+  <!-- 主标题 -->
   <div class="main-title-box">
-    <div class="badge-category">ORANGE PAPER // TYPE B SPECIFICATION</div>
+    <div class="badge-category">AI AGENT CONTENT WORKFLOW // TECHNICAL MANUAL</div>
     <h1 class="book-title">
       微信公众号爆文创作<br>
-      <span class="accent">SKILL 橙皮书</span>
+      <span class="accent">AI SKILL</span> 橙皮书
     </h1>
     <div class="book-subtitle">
-      从 0 到 1 打造 10w+ 工业化流水线 · WeChat Viral Content Creation Skill
+      从 0 到 1 打造 10w+ 工业化流水线 · 基于 Grok AI 纯原生封面艺术
     </div>
   </div>
 
-  <div class="meta-grid">
-    <div class="spec-card">
-      <div class="spec-card-title">
-        <span>BOOK SPECIFICATIONS</span>
-        <span>书籍元数据</span>
+  <!-- 中部留白：让 Grok 绘制的 8K 发光能量立方体震撼呈现 -->
+  <div class="hero-spacer"></div>
+
+  <!-- 底部元数据条与条形码 -->
+  <div class="bottom-box">
+    <div class="meta-strip">
+      <div class="meta-item">
+        <span class="lbl">封面插画生成</span>
+        <span class="val">Grok Imagine (3:4 High-Res)</span>
       </div>
-      <div class="spec-list">
-        <div class="spec-row">
-          <div class="spec-k">适用生态</div>
-          <div class="spec-v">Claude Code / Agent Skills / Cursor</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-k">核心能力</div>
-          <div class="spec-v">选题炼金 · 标题8选1 · 文风DNA · 反蒸馏清洗 · 草稿箱推送</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-k">信息来源</div>
-          <div class="spec-v">开源社区 · GitHub 仓库 · 微信公众号实战</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-k">全书架构</div>
-          <div class="spec-v">3 大 Part · 7 个 § 章节 · 开源生态附录</div>
-        </div>
+      <div class="meta-item">
+        <span class="lbl">书籍规范标准</span>
+        <span class="val">huashu-bookwriter Blueprint</span>
+      </div>
+      <div class="meta-item">
+        <span class="lbl">核心流水线</span>
+        <span class="val">8 大开源 Skill 完整矩阵</span>
       </div>
     </div>
 
-    <div class="summary-card">
-      <div class="sum-box">
-        <div class="sum-num">8 个</div>
-        <div class="sum-lbl">核心 Skill 标准工业级定义</div>
+    <div class="footer-meta">
+      <div class="author-info">
+        <h3>开源内容工程协作组 (Open Content Ops Group)</h3>
+        <p>立足第一性原理，用真实素材填血肉。技术手册与工业级代码工具库。</p>
       </div>
-      <div class="sum-box">
-        <div class="sum-num">≤25字</div>
-        <div class="sum-lbl">单句严格断句 · 零 AI 假大空</div>
-      </div>
-    </div>
-  </div>
 
-  <div class="footer-meta">
-    <div class="source-note">
-      <h3>开源技术文档库 (Open Source Docs)</h3>
-      <p>遵循 huashu-bookwriter 蓝图与风格 DNA 编写。实事求是，以代码与数据为唯一准绳。</p>
-      <div class="pill-tags">
-        <span class="pill-tag">huashu-bookwriter 蓝图</span>
-        <span class="pill-tag">8 大核心 Skill</span>
-        <span class="pill-tag">开箱即用脚本</span>
+      <div class="barcode-box">
+        <div class="barcode-lines">
+          <div class="bar thick"></div><div class="bar"></div><div class="bar med"></div>
+          <div class="bar"></div><div class="bar thick"></div><div class="bar med"></div>
+          <div class="bar"></div><div class="bar thick"></div><div class="bar"></div>
+          <div class="bar med"></div><div class="bar thick"></div><div class="bar"></div>
+        </div>
+        <div class="barcode-num">ISBN 978-7-GROK-ORANGE-2026</div>
       </div>
-    </div>
-
-    <div class="barcode-box">
-      <div class="barcode-lines">
-        <div class="bar thick"></div><div class="bar"></div><div class="bar med"></div>
-        <div class="bar"></div><div class="bar thick"></div><div class="bar med"></div>
-        <div class="bar"></div><div class="bar thick"></div><div class="bar"></div>
-        <div class="bar med"></div><div class="bar thick"></div><div class="bar"></div>
-      </div>
-      <div class="barcode-num">ISBN 978-7-WECHAT-SKILL-2026</div>
     </div>
   </div>
 </body>
